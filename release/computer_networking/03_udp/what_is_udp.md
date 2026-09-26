@@ -1,0 +1,105 @@
+# User Datagram Protocol - UDP
+
+UDP là giao thức lớp **Transport** được thiết kế để đánh đổi mọi cơ chế đảm bảo độ tin cậy lấy tốc độ truyền tải tối đa. Tài liệu này phân tích các đặc tính nền tảng của UDP, cơ chế **Multiplexing** và **Demultiplexing** dựa trên số cổng, cùng những trường hợp sử dụng thực tế mà UDP là lựa chọn tối ưu.
+
+## Table of Contents
+
+-   [1. Các đặc điểm chính](#1-các-đặc-điểm-chính)
+-   [2. Cách hoạt động: Ghép kênh và Phân kênh](#2-cách-hoạt-động-ghép-kênh-và-phân-kênh)
+-   [3. Ví dụ thực tế](#3-ví-dụ-thực-tế)
+-   [4. Các trường hợp sử dụng phổ biến](#4-các-trường-hợp-sử-dụng-phổ-biến)
+
+---
+
+## 1. Các đặc điểm chính
+
+UDP được định nghĩa bởi một vài đặc tính quan trọng, khiến nó khác biệt hoàn toàn so với "người anh em" phức tạp hơn của nó là TCP.
+
+### 1.1. Hoạt động với Port
+
+IP chỉ có thể xác định một **host** cụ thể thông qua địa chỉ IP, nhưng trên một máy chủ có thể chạy rất nhiều ứng dụng khác nhau cùng lúc. Đây là bài toán mà UDP giải quyết bằng một bước tiến vượt bậc so với IP.
+
+UDP giới thiệu khái niệm **Port**. Mỗi ứng dụng trên máy chủ sẽ "lắng nghe" trên một cổng riêng. Nhờ đó, chúng ta có thể gửi dữ liệu đến cùng một địa chỉ IP nhưng nhắm tới các ứng dụng khác nhau bằng cách chỉ định cổng đích.
+
+-   💡 **Mẹo:** Địa chỉ IP giống như địa chỉ nhà của bạn. **Port** giống như số phòng cụ thể trong ngôi nhà đó. IP đưa thư đến đúng nhà, còn UDP đảm bảo lá thư được đưa đến đúng người (đúng ứng dụng) trong căn phòng của họ.
+
+### 1.2. Phi trạng thái (Stateless)
+
+UDP là một giao thức **stateless**. Điều này có nghĩa là máy chủ không lưu trữ bất kỳ thông tin hay "trạng thái" nào về các gói tin đã gửi hoặc nhận trước đó. Mỗi gói dữ liệu (**datagram**) được xử lý một cách hoàn toàn độc lập.
+
+-   **Ưu điểm:** Vì không cần quản lý trạng thái, máy chủ có thể xử lý các yêu cầu rất nhanh chóng và tốn ít tài nguyên hơn.
+-   **So sánh:** Ngược lại, TCP là giao thức **stateful**. Nó phải theo dõi số thứ tự gói tin, kích thước cửa sổ, xác nhận đã nhận... rất phức tạp.
+
+### 1.3. Không kết nối (Connectionless)
+
+Do tính chất stateless, UDP không yêu cầu phải thiết lập một kết nối "bắt tay" (**handshake**) trước khi gửi dữ liệu. Một ứng dụng có thể gửi một gói dữ liệu UDP đến đích bất cứ lúc nào nó muốn.
+
+Đây là cơ chế "bắn và quên" (**fire and forget**). Bạn chỉ cần gửi đi và hy vọng nó đến nơi.
+
+### 1.4. Đơn giản và Header nhỏ
+
+UDP cực kỳ đơn giản. **Header** của một gói tin UDP chỉ có **8 bytes** – rất nhỏ so với 20 bytes (hoặc hơn) của TCP. Header nhỏ đồng nghĩa với việc dữ liệu truyền đi ít bị độn thêm thông tin quản lý (**overhead**), giúp tăng hiệu quả truyền tải.
+
+### 1.5. Không đảm bảo gửi nhận (Unreliable)
+
+Đây vừa là điểm yếu vừa là thế mạnh của UDP. "Không đảm bảo" ở đây có nghĩa là:
+
+-   **Không đảm bảo gói tin sẽ đến đích:** Gói tin có thể bị mất trên đường truyền.
+-   **Không đảm bảo thứ tự:** Các gói tin có thể đến đích không theo thứ tự chúng được gửi đi.
+-   **Không có cơ chế truyền lại:** Nếu một gói tin bị mất, UDP sẽ không tự động gửi lại.
+
+> 📌 **Ghi nhớ:** Việc này nghe có vẻ tệ, nhưng nó lại chính là lý do UDP rất nhanh. Nó không tốn thời gian cho việc xác nhận, sắp xếp lại thứ tự hay gửi lại gói tin.
+
+---
+
+## 2. Cách hoạt động: Ghép kênh và Phân kênh
+
+Đây là một trong những chức năng quan trọng nhất của UDP.
+
+-   **Multiplexing (Ghép kênh):** Ở phía người gửi, hệ điều hành thu thập dữ liệu từ nhiều ứng dụng khác nhau (mỗi ứng dụng có một cổng nguồn riêng). Sau đó, nó đóng gói dữ liệu này vào các gói UDP và đẩy xuống Lớp IP để gộp thành một luồng duy nhất gửi đi qua mạng.
+
+-   **Demultiplexing (Phân kênh):** Ở phía người nhận, khi một gói tin IP chứa dữ liệu UDP đến, hệ điều hành sẽ nhìn vào **destination port** trong header của UDP. Dựa vào số cổng này, nó sẽ biết chính xác cần chuyển gói dữ liệu cho ứng dụng nào đang chờ.
+
+Để xác định một luồng giao tiếp duy nhất, hệ thống sử dụng một bộ 4 thông tin (**4-tuple**):
+`{IP nguồn, Cổng nguồn, IP đích, Cổng đích}`
+
+---
+
+## 3. Ví dụ thực tế
+
+Giả sử Ứng dụng 1 trên máy `10.0.0.1` muốn gửi yêu cầu DNS đến một máy chủ tại `10.0.0.2`.
+
+1.  **Gói tin yêu cầu (Request):**
+
+    -   **IP Nguồn:** `10.0.0.1`
+    -   **IP Đích:** `10.0.0.2`
+    -   **Cổng Nguồn:** `55555` (một cổng ngẫu nhiên do máy gửi chọn)
+    -   **Cổng Đích:** `53` (cổng tiêu chuẩn cho dịch vụ DNS)
+
+    Máy `10.0.0.1` gửi gói tin này đi.
+
+2.  **Gói tin phản hồi (Response):**
+    Máy chủ DNS tại `10.0.0.2` nhận được yêu cầu, xử lý và gửi lại phản hồi. Nó sẽ đảo ngược thông tin nguồn và đích:
+
+    -   **IP Nguồn:** `10.0.0.2`
+    -   **IP Đích:** `10.0.0.1`
+    -   **Cổng Nguồn:** `53`
+    -   **Cổng Đích:** `55555`
+
+    Nhờ có cổng đích `55555`, máy `10.0.0.1` biết rằng gói tin phản hồi này dành cho Ứng dụng 1 đã gửi yêu cầu ban đầu.
+
+---
+
+## 4. Các trường hợp sử dụng phổ biến
+
+UDP là lựa chọn lý tưởng cho các ứng dụng ưu tiên **tốc độ** và **độ trễ thấp** hơn là sự toàn vẹn dữ liệu tuyệt đối.
+
+-   **Truyền phát Video/Audio Streaming:** Mất một vài khung hình (**frame**) hoặc một vài mili giây âm thanh thường không ảnh hưởng lớn đến trải nghiệm người dùng, nhưng độ trễ thì có.
+-   **Game Online:** Trong game, việc nhận được vị trí của đối thủ ngay lập tức quan trọng hơn nhiều so với việc đảm bảo mọi gói tin đều đến nơi. Độ trễ có thể quyết định thắng thua.
+-   **DNS (Domain Name System):** Các truy vấn DNS thường nhỏ gọn, chỉ là một cặp hỏi-đáp. Dùng UDP giúp việc phân giải tên miền diễn ra nhanh nhất có thể.
+    -   📌 **Ghi nhớ:** Vì UDP không có kết nối an toàn, nó dễ bị tấn công **DNS Poisoning**, kẻ gian có thể chặn và thay đổi phản hồi DNS để chuyển hướng người dùng đến các trang web độc hại.
+-   **VPN (Mạng riêng ảo):** Nhiều giao thức VPN sử dụng UDP để tránh hiện tượng **TCP Meltdown** (hiệu suất kém khi chạy TCP qua TCP).
+-   **WebRTC (Web Real-Time Communication):** Giao thức cho phép giao tiếp thời gian thực (video call, chia sẻ file) trực tiếp giữa các trình duyệt, và nó sử dụng UDP để đạt được độ trễ thấp nhất.
+
+---
+[← Back to README](../README.md)

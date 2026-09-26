@@ -1,0 +1,43 @@
+Docs — Personal Knowledge Base
+Copyright (c) MaiTheHao
+
+This work is licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+Bạn được phép:
+  - Chia sẻ — sao chép và phân phối lại nội dung dưới mọi định dạng.
+  - Phái sinh — chỉnh sửa, biến đổi, xây dựng dựa trên nội dung.
+
+Với điều kiện:
+  - Ghi nhận tác giả (Attribution) — Phải ghi rõ nguồn gốc, đường link
+    tới giấy phép, và nêu rõ nếu có thay đổi so với bản gốc. Ghi nhận
+    theo cách hợp lý, nhưng không theo cách ngụ ý rằng tác giả đồng ý
+    hay ủng hộ việc sử dụng của bạn.
+  - Phi thương mại (NonCommercial) — Không được sử dụng nội dung này
+    cho mục đích thương mại.
+  - Không có ràng buộc bổ sung — Không được áp đặt các điều khoản
+    pháp lý hoặc biện pháp công nghệ giới hạn quyền mà giấy phép cho phép.
+
+Toàn văn giấy phép (pháp lý, tiếng Anh):
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Tóm tắt dễ đọc:
+https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+LƯU Ý VỀ PHẠM VI ÁP DỤNG
+
+1. Giấy phép CC BY-NC 4.0 này áp dụng cho các tài liệu do tác giả
+   (MaiTheHao) tự biên soạn, tổng hợp, và trình bày trong thư mục
+   `release/` và `temporary/` của repo này.
+
+2. Thư mục `library/books/` chứa sách, bài báo và tài liệu chuyên ngành
+   của bên thứ ba. Các tài liệu này KHÔNG thuộc phạm vi giấy phép trên
+   và vẫn giữ nguyên bản quyền của tác giả/nhà xuất bản gốc. Việc lưu
+   trữ trong repo chỉ nhằm mục đích tham khảo cá nhân; người dùng có
+   trách nhiệm tự kiểm tra quyền sử dụng hợp pháp trước khi tái phân
+   phối các tài liệu này.
+
+3. Mã nguồn (nếu có) đính kèm trong tài liệu chỉ mang tính minh họa,
+   không đi kèm bảo đảm nào và được cung cấp "nguyên trạng" (as-is).
