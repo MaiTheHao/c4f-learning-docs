@@ -27,12 +27,12 @@ Phân nhánh tài liệu này tổng hợp các nguyên lý nền tảng, quy lu
 
 ## Tài liệu Tham khảo
 
-Toàn bộ nội dung trong phân nhánh này được tổng hợp, đối chiếu và chuẩn hóa từ các tài liệu sách kỹ thuật chuẩn mực trong thư viện:
+Toàn bộ nội dung trong phân nhánh này được tổng hợp, đối chiếu và chuẩn hóa từ các tài liệu sách kỹ thuật chuẩn mực:
 
-| Sách Tham khảo | Đường dẫn Lưu trữ | Tác giả |
-| :--- | :--- | :--- |
-| **Fundamentals of Software Architecture (2nd Edition)** | [`library/books/fundamentals_of_software_architecture_2nd.epub`](../../library/books/fundamentals_of_software_architecture_2nd.epub) | Mark Richards & Neal Ford |
-| **Clean Architecture: A Craftsman's Guide to Software Structure and Design** | [`library/books/clean_architecture_a_acraftsman_guide.pdf`](../../library/books/clean_architecture_a_acraftsman_guide.pdf) | Robert C. Martin (Uncle Bob) |
+| Sách Tham khảo | Tác giả |
+| :--- | :--- |
+| **Fundamentals of Software Architecture (2nd Edition)** | Mark Richards & Neal Ford |
+| **Clean Architecture: A Craftsman's Guide to Software Structure and Design** | Robert C. Martin (Uncle Bob) |
 
 ---
 

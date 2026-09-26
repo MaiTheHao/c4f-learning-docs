@@ -9,7 +9,7 @@
 
 ## Abstract
 
-**Modularity** là nguyên lý nền tảng giúp kiểm soát tính hỗn loạn (entropy) trong các hệ thống phần mềm phức tạp thông qua việc thiết lập ranh giới đóng gói logic rõ ràng giữa các thành phần mã nguồn. Mặc dù lợi ích của việc chia nhỏ hệ thống thường được ca ngợi, chìa khóa thực chất nằm ở việc làm chủ điểm cân bằng về **Granularity** nhằm ngăn chặn các phản mẫu cấu trúc nguy hiểm. Để biến trực giác thiết kế thành các quyết định kỹ thuật định lượng và nhất quán, [Fundamentals of Software Architecture: Second Edition](../../../library/books/fundamentals_of_software_architecture_2nd.epub) cung cấp ba trụ cột đo lường cốt lõi: tối đa hóa sự tập trung trách nhiệm nội bộ (**Cohesion**), giảm thiểu mức độ phụ thuộc lan truyền giữa các mô-đun (**Coupling**), và nhận diện bản chất ràng buộc mã nguồn để tối ưu hóa vị trí cùng mức độ gắn kết (**Connascence**).
+**Modularity** là nguyên lý nền tảng giúp kiểm soát tính hỗn loạn (entropy) trong các hệ thống phần mềm phức tạp thông qua việc thiết lập ranh giới đóng gói logic rõ ràng giữa các thành phần mã nguồn. Mặc dù lợi ích của việc chia nhỏ hệ thống thường được ca ngợi, chìa khóa thực chất nằm ở việc làm chủ điểm cân bằng về **Granularity** nhằm ngăn chặn các phản mẫu cấu trúc nguy hiểm. Để biến trực giác thiết kế thành các quyết định kỹ thuật định lượng và nhất quán, cuốn sách *Fundamentals of Software Architecture: Second Edition* cung cấp ba trụ cột đo lường cốt lõi: tối đa hóa sự tập trung trách nhiệm nội bộ (**Cohesion**), giảm thiểu mức độ phụ thuộc lan truyền giữa các mô-đun (**Coupling**), và nhận diện bản chất ràng buộc mã nguồn để tối ưu hóa vị trí cùng mức độ gắn kết (**Connascence**).
 
 ---
 

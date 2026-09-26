@@ -28,11 +28,10 @@ Kho tài liệu này được tạo ra nhằm tối ưu hóa việc quản lý t
 
 ## Cấu Trúc Phân Nhánh Tài Liệu
 
-Hệ thống tài liệu được tổ chức thành 3 phân vùng chính:
+Hệ thống tài liệu được tổ chức thành 2 phân vùng chính:
 
 - **[Release Docs](release/README.md)**: Chứa các tài liệu đã được rà soát, kiểm chứng và biên tập hoàn chỉnh theo góc nhìn cá nhân. Có độ tin cậy cao hơn so với tài liệu nháp, tuy nhiên vẫn cần đọc và chọn lọc.
 - **[Temporary Docs](temporary/README.md)**: Khu vực nháp ghi nhận nhanh các chủ đề chưa qua kiểm chứng hoặc tổng hợp từ AI nhằm khám phá các góc khuất kiến thức (*"stuff you don't know you don't know"*) và khơi gợi ý tưởng viết bài; **không có giá trị dùng để học tập trực tiếp**.
-- **[Library](library/books/)**: Thư viện tài nguyên số lưu trữ sách kỹ thuật, bài báo khoa học và các tài liệu chuyên ngành của bên thứ ba phục vụ nghiên cứu cá nhân.
 
 ---
 

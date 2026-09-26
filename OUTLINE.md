@@ -28,13 +28,4 @@ Các tài liệu ghi chú nhanh và chủ đề đang nghiên cứu:
 
 ---
 
-## 3. Thư Viện Tài Liệu (`/library`)
-
-Nguồn tài nguyên lưu trữ sách kỹ thuật và bài báo khoa học:
-
-- [Books](library/books/) — Bộ sưu tập sách kỹ thuật chuyên ngành (Clean Architecture, Continuous Delivery, Microservices, SQL, Design Patterns,...).
-- [Papers](library/papers/) — Tài liệu nghiên cứu và bài báo khoa học.
-
----
-
 [← Quay lại README](README.md)

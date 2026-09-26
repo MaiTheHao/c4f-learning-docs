@@ -46,7 +46,7 @@ Hai khái niệm **Modularity** và **Granularity** thường xuyên bị dùng 
 
 ## Ba Trụ cột Đo lường Modularity
 
-Để định lượng và kiểm soát tính mô-đun hóa thay vì phán đoán cảm tính, các tác giả của cuốn sách [Fundamentals of Software Architecture](../../../library/books/fundamentals_of_software_architecture_2nd.epub) đã hệ thống hóa và đưa ra ba đại lượng đo lường cốt lõi:
+Để định lượng và kiểm soát tính mô-đun hóa thay vì phán đoán cảm tính, các tác giả của cuốn sách *Fundamentals of Software Architecture* đã hệ thống hóa và đưa ra ba đại lượng đo lường cốt lõi:
 
 | Thước đo | Trọng tâm Đánh giá | Câu hỏi Kiến trúc Then chốt |
 | :--- | :--- | :--- |

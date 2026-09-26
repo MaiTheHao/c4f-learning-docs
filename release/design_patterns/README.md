@@ -1,7 +1,7 @@
 # Mục Lục Tài Liệu Design Patterns & OOP
 
 > [!IMPORTANT]
-> Toàn bộ nội dung và kiến thức chuyên sâu trong tài liệu này được bản thân đúc kết trực tiếp từ cuốn sách kinh điển [*Design Patterns: Elements of Reusable Object-Oriented Software*](../../library/books/design_patterns.epub) (Gang of Four - GoF).
+> Toàn bộ nội dung và kiến thức chuyên sâu trong tài liệu này được bản thân đúc kết trực tiếp từ cuốn sách kinh điển *Design Patterns: Elements of Reusable Object-Oriented Software* (Gang of Four - GoF).
 
 Tài liệu này là mục lục điều hướng tổng quan hệ thống hóa toàn bộ kiến thức nền tảng về Lập trình Hướng Đối Tượng (OOP), các nguyên tắc thiết kế SOLID, hệ thống các mẫu thiết kế kinh điển (Design Patterns) cùng các mô hình kiến trúc cốt lõi như Inversion of Control (IoC) và Dependency Injection (DI). Bằng việc phân tách rõ ràng giữa tư duy hướng đối tượng, nguyên lý thiết kế và các mẫu kiến trúc cụ thể, tài liệu định hướng lộ trình học tập bài bản, giúp người đọc nắm bắt bản chất cách tổ chức mã nguồn có tính mở rộng cao, giảm thiểu **Tight Coupling** và gia tăng **Cohesion** trong các hệ thống phần mềm thực tế.
 
