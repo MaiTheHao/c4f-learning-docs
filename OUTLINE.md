@@ -11,6 +11,7 @@ Các tài liệu kỹ thuật đã được trực tiếp kiểm duyệt, rà so
 - [Books](release/books/) — Tài liệu & Sách tham khảo kỹ thuật.
 - [Computer Networking](release/computer_networking/) — Mạng máy tính và các giao thức truyền thông.
 - [Design Patterns](release/design_patterns/) — Các mẫu thiết kế phần mềm và nguyên lý OOP (SOLID, Creational, Behavioral).
+- [Programming Frameworks](release/programming_frameworks/) — Các framework lập trình (Spring: AOP, SpEL).
 - [Programming Languages](release/programming_languages/) — Chuyên đề ngôn ngữ lập trình (Java, JavaScript).
 - [Security](release/security/) — Xác thực và an toàn thông tin (JWT, OAuth).
 - [Software Architecture](release/software_architecture/) — Kiến trúc phần mềm và các quy luật thiết kế hệ thống (Fundamentals, Characteristics, Styles).
