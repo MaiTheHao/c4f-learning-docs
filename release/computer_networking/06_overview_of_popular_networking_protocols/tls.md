@@ -73,6 +73,9 @@ Hãy xem HTTP hoạt động như thế nào khi _không_ có mã hóa (thườn
     -   Server dùng _chính khóa bí mật đó_ để _giải mã_ yêu cầu.
     -   Server _mã hóa_ phản hồi (HTML,...) bằng khóa đó và gửi lại.
 
+![TLS Hanshake](../assets/TLSHanshake.png)
+
+
 Câu hỏi là: Làm thế nào để Client và Server có thể trao đổi cái khóa bí mật đó một cách an toàn? Đây chính là "chìa khóa" (pun intended) của vấn đề.
 
 ---
@@ -122,6 +125,8 @@ Kể từ thời điểm này, toàn bộ dữ liệu HTTP payload được bả
 
 ## 6. Lỗ hổng của RSA: Thiếu Perfect Forward Secrecy
 
+![alt text](../assets/ForwardSecrecyVsPerfectForwardSecrecy.png)
+
 Cơ chế trao đổi khóa bằng RSA ẩn chứa một điểm yếu cốt tử về mặt thiết kế: không hỗ trợ **PFS (Perfect Forward Secrecy - Tính bảo mật chuyển tiếp hoàn hảo)**.
 
 Hãy xét kịch bản tấn công hồi cứu (Retrospective Decryption):
@@ -169,6 +174,8 @@ Nếu chỉ trao đổi $A$ và $B$ đơn thuần, kẻ đứng giữa có thể
 3. **Client xác thực & Tính khóa:**
     - Client kiểm tra Certificate và xác thực chữ ký số bằng Public Key của Server (loại bỏ hoàn toàn rủi ro MITM).
     - Cả hai bên độc lập tính ra $K = g^{xy} \pmod p$, từ đó suy dẫn ra Session Keys đối xứng.
+
+![alt text](../assets/DiffieHellman.png)
 
 > [!NOTE]
 > **Tại sao cơ chế này thỏa mãn Perfect Forward Secrecy (DHE / ECDHE)?**
