@@ -77,7 +77,7 @@ Keep the specific value only if it passes the scope test or the practical-need t
 
 Not every specific value is noise — some are worth a light mention because they **disambiguate behavior**, not because they're technically precise. The rule for inserting them tastefully:
 
-- If a version or number changes which *flow* applies (e.g. "TLS 1.2" vs. "TLS 1.3" have genuinely different handshake sequences), a **brief inline mention** is fine — it orients the reader, it is not the headline.
+- If a version or number changes which *flow* applies (e.g. "TLS 1.2" vs. "TLS 1.3" have genuinely different handshake sequences), a **brief inline mention** is fine; it orients the reader, it is not the headline. Phrase it inside parentheses `( )`, not em-dashes (see `doc-structure-style` §7).
 - If a version or number is just incidental provenance (which exact cipher-suite string, which RFC section, which CVE) and does not change the flow being taught, it does not belong in a Level-1 narrative at all.
 - Never let the specific value become the subject of the sentence in a Level-1 section. It is a light qualifier, not the point.
 - Deeper comparative specifics (bit-lengths, cipher-suite IDs, exact config) belong in a side table, footnote, or a separate Level-2/Level-3 section — never folded into the main narrative flow.
@@ -88,7 +88,7 @@ Not every specific value is noise — some are worth a light mention because the
 
 **Level-1 rewrite (target for a foundational "how TLS establishes a shared secret" doc):**
 
-> TLS 1.2 — a very common version — typically uses **RSA** for key exchange.
+> TLS 1.2 (a very common version) typically uses **RSA** for key exchange.
 > 1. **TCP handshake:** done.
 > 2. **Client Hello:** the client opens with "I want a TLS connection; here are the algorithms I support — key exchange via **RSA**, symmetric encryption via **AES**..."
 > 3. **Server Hello:** the server replies "Agreed, RSA and AES. Here is my **Certificate** — it contains my **Public Key**."
@@ -97,7 +97,7 @@ Not every specific value is noise — some are worth a light mention because the
 > 6. **Server decrypts:** only the holder of the matching **Private Key** can recover the pre-master secret.
 > 7. **Both sides derive the same symmetric key** from the shared pre-master secret; all further HTTP traffic is encrypted with it.
 
-Notice what survives: the actors (Client, Server, Certificate, Public/Private Key), the sequence, and one light disambiguating mention ("TLS 1.2 — a very common version —") because it distinguishes this flow from TLS 1.3's. What was cut: the exact standard name, the exact bit-length, the citation — none of it changes the flow.
+Notice what survives: the actors (Client, Server, Certificate, Public/Private Key), the sequence, and one light disambiguating mention ("TLS 1.2 (a very common version)") because it distinguishes this flow from TLS 1.3's. What was cut: the exact standard name, the exact bit-length, the citation — none of it changes the flow.
 
 A **Level-2/3 companion section** ("TLS Key-Exchange Algorithms Compared" or "TLS 1.2 Cipher Suites") is where RSA vs. Diffie-Hellman trade-offs, key sizes, and cipher-suite strings belong.
 

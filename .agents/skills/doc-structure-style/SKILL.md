@@ -112,6 +112,13 @@ These are *presentation* rules for code blocks. Whether a snippet should exist a
   - *Correct:* "Mẫu này giúp giảm thiểu **Tight Coupling** và gia tăng **Cohesion** giữa các mô-đun."
 - Standard terms that always stay in English: **Trade-off**, **Coupling**, **Cohesion**, **Fitness Functions**, **Runtime**, **Compile-time**, **Subject**, **Observer**, **Context**, **Strategy**, **Microservices**, **Monolith**, **ADR**, **CI/CD**, etc.
 
+**Inline asides & punctuation**
+- Use parentheses `( )` for an inline explanation, definition, or clarification of a term.
+- Do **not** wrap such asides in em-dashes `—`. An em-dash splices a running sentence into visual fragments and makes it hard to follow; it also gets confused with a genuine sentence connector. Reserve `—` for an actual sentence-level break (or drop it), never for glossing a term.
+  - *Weak:* "compiler tự **type inference** — suy ra type argument từ tham số truyền vào — nên ta không cần viết tường minh."
+  - *Correct:* "compiler tự **type inference** (suy ra type argument từ tham số truyền vào) nên ta không cần viết tường minh."
+- Parentheses are for explaining *new* content, not for redundantly restating a term already written in the other language. That remains a violation of the terminology rule above.
+
 **Technical storytelling structure**
 - **Context before definition:** prefer the flow `Context → Motivation → Definition` over opening with an abstract definition.
 - **Reasoning flow:** maintain `Why → How → Where → Trade-off` throughout the analysis.
@@ -154,6 +161,7 @@ A document only counts as compliant once **all** of the following hold:
 - [ ] Mermaid: appears **only on explicit user request**; free representation style once requested.
 - [ ] Code blocks: language tag declared; one-line description precedes the block; Vietnamese text inside has full diacritics; length kept to short structural snippets.
 - [ ] Terminology & voice: natural Vietnamese; English technical terms preserved as-is; no "Vietnamese + parenthetical English" redundancy.
+- [ ] Punctuation: inline explanations/definitions are wrapped in `( )`, never em-dashes `—`.
 - [ ] Formatting: GitHub Alerts used correctly instead of plain blockquotes; tables well-aligned.
 - [ ] Cross-linking: considered whether a `## Related` section is needed (if so, apply `crosslink-doc-style` for bidirectional links).
 - [ ] Depth check delegated: nothing in the document was accepted or rejected for technical depth reasons without going through `doc-content-depth`.
