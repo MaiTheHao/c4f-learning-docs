@@ -10,6 +10,10 @@ Spring AOP dùng proxy tại Runtime để áp dụng các concern xuyên suốt
 
 Spring Expression Language cung cấp một ngôn ngữ biểu thức chung để truy vấn và thao tác trên object tại Runtime, phục vụ cấu hình bean và nhiều tính năng trong hệ sinh thái Spring. [Xem Spring Expression Language](./spel/README.md).
 
+## Spring Proxy
+
+Bộ tài liệu chuyên sâu về Spring AOP dựa trên proxy: mô hình nền tảng, luồng gọi và self-invocation, lựa chọn JDK proxy hay CGLIB, cấu hình annotation, các API tạo proxy thủ công, giới hạn và chẩn đoán. [Xem Spring Proxy Guide](./spring_proxy_guide/README.md).
+
 ---
 
 [← Back to README](../../README.md)

@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant Caller
+    participant Proxy
+    participant A as Interceptor A
+    participant B as Interceptor B
+    participant Target
+    Caller->>Proxy: invoke()
+    Proxy->>A: invoke
+    A->>A: before A
+    A->>B: proceed
+    B->>B: before B
+    B->>Target: invoke target
+    Target-->>B: return / throw
+    B->>B: after B
+    B-->>A: return / throw
+    A->>A: after A
+    A-->>Proxy: return / throw
+    Proxy-->>Caller: return / throw

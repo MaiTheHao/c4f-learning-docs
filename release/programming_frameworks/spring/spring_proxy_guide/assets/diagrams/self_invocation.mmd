@@ -1,0 +1,5 @@
+flowchart TD
+    Client["Client"] -->|"outer()"| Proxy["Proxy"]
+    Proxy -->|"intercepted invocation"| TargetOuter["Target.outer()"]
+    TargetOuter -->|"this.inner()"| TargetInner["Target.inner()"]
+    TargetInner -.->|"bypasses proxy"| Bypass["Advice for inner() is skipped"]

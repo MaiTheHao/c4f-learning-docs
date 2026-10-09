@@ -1,0 +1,9 @@
+flowchart TD
+    Start["Target bean"] --> HasInterface{"Suitable interface?"}
+    HasInterface -->|"Yes"| JDK["JDK dynamic proxy is viable"]
+    HasInterface -->|"No"| CGLIB["CGLIB class proxy is usual option"]
+    JDK --> NeedClass{"Must expose concrete class methods?"}
+    NeedClass -->|"No"| InterfaceContract["Prefer interface contract"]
+    NeedClass -->|"Yes"| ClassProxy["Evaluate class-based proxy"]
+    CGLIB --> Limits["Check final class/method and visibility"]
+    ClassProxy --> Limits
