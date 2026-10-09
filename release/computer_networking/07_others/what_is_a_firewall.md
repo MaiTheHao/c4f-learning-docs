@@ -1,0 +1,131 @@
+# Tường lửa (Firewall): Người Gác cổng giữa Mạng Tin cậy và Internet
+
+## Table of Contents
+
+-   [1. Tường lửa là gì?](#1-tường-lửa-là-gì)
+-   [2. Vì sao cần Tường lửa?](#2-vì-sao-cần-tường-lửa)
+-   [3. Các loại Tường lửa](#3-các-loại-tường-lửa)
+-   [4. Tường lửa Mạng và Cách Triển khai](#4-tường-lửa-mạng-và-cách-triển-khai)
+-   [5. Lịch sử Hình thành](#5-lịch-sử-hình-thành)
+-   [6. Tổng kết](#6-tổng-kết)
+
+---
+
+## 1. Tường lửa là gì?
+
+Tường lửa là lớp phòng thủ đầu tiên của gần như mọi hạ tầng mạng: nó đứng giữa mạng tin cậy và mạng không tin cậy (thường là Internet) để giám sát, cho phép hoặc chặn từng luồng dữ liệu đi qua. Cụ thể hơn, tường lửa là một hệ thống bảo mật kiểm soát lưu lượng mạng dựa trên một tập quy tắc định trước, qua đó quyết định luồng dữ liệu nào được phép đi qua và luồng nào bị chặn lại.
+
+> [!NOTE]
+> Thuật ngữ "tường lửa" vay mượn từ ngành xây dựng: những bức tường được dựng giữa các tòa nhà để ngăn ngọn lửa lan sang công trình liền kề. Tường lửa mạng hoạt động theo nguyên lý tương tự, chỉ khác là nó ngăn các mối đe dọa số thay vì ngọn lửa vật lý.
+
+Về hình thức triển khai, tường lửa có thể là phần cứng chuyên dụng, phần mềm chạy trên một máy chủ, hoặc kết hợp cả hai. Dù ở dạng nào, chức năng cốt lõi vẫn là một điểm kiểm soát tập trung đối với dòng lưu lượng ra vào mạng được bảo vệ.
+
+---
+
+## 2. Vì sao cần Tường lửa?
+
+Mục đích chính của tường lửa là bảo mật. Nó có thể chặn lưu lượng độc hại ngay từ bên ngoài trước khi lưu lượng đó chạm tới mạng nội bộ, đồng thời ngăn thông tin nhạy cảm bị rò rỉ ra ngoài. Một tường lửa chỉ kiểm tra chiều vào mà bỏ qua chiều ra sẽ để lọt kịch bản máy bị nhiễm mã độc âm thầm gửi dữ liệu ra ngoài, nên cả hai chiều đều phải nằm trong tầm kiểm soát.
+
+Ngoài mục đích bảo mật, tường lửa còn được dùng để lọc nội dung. Một trường học có thể cấu hình tường lửa chặn truy cập vào nội dung không phù hợp với học sinh; ở quy mô lớn hơn, một số quốc gia vận hành tường lửa để giới hạn những phần của Internet mà người dùng trong nước có thể truy cập. Cơ chế đằng sau hai ví dụ này giống hệt nhau: một tập quy tắc quyết định nội dung nào được đi qua.
+
+---
+
+## 3. Các loại Tường lửa
+
+Tường lửa tiến hóa qua nhiều thế hệ, mỗi thế hệ mở rộng mức độ hiểu biết về lưu lượng mà nó kiểm tra. Bảng dưới tóm tắt các nhóm chính trước khi đi vào chi tiết.
+
+| Nhóm tường lửa | Cơ chế cốt lõi | Bảo vệ chủ yếu |
+| :--- | :--- | :--- |
+| **Proxy-based Firewall** | Ngắt kết nối trực tiếp, kiểm tra rồi mở một kết nối mới | Ẩn danh client, kiểm soát nội dung |
+| **Stateful Firewall** | Lưu trạng thái các kết nối đang mở để ra quyết định | Mạng nội bộ, chống quét cổng |
+| **NGFW** | Kiểm tra sâu gói tin và ngữ cảnh ứng dụng/người dùng | Phòng thủ đa tầng |
+| **WAF** | Lọc lưu lượng HTTP giữa ứng dụng web và Internet | Ứng dụng web |
+| **FWaaS** | Cung cấp năng lực tường lửa qua cloud | Hạ tầng cloud và multi-cloud |
+
+### 3.1. Tường lửa dựa trên Proxy
+
+**Proxy-based Firewall** hoạt động như một **Proxy** đứng giữa client và server. Client kết nối tới tường lửa; tường lửa kiểm tra các gói tin đi ra rồi mở một kết nối riêng tới đích đến thật. Chiều ngược lại diễn ra tương tự: phản hồi từ server được tường lửa chặn lại, kiểm tra, rồi chuyển cho client qua một kết nối riêng. Hệ quả là client và server không bao giờ có kết nối trực tiếp với nhau.
+
+> [!TIP]
+> Hãy hình dung một nhân viên soát vé đứng trước cửa hộp đêm: anh ta chặn khách lại trước khi họ vào để kiểm tra giấy tờ, và cũng chặn khách trên đường ra để bảo đảm họ về nhà an toàn. Cái giá phải trả là khi dòng người quá đông, hàng chờ sẽ dài và mỗi người đều bị chậm lại.
+
+Hạn chế lớn nhất của nhóm này chính là **latency**, đặc biệt khi lưu lượng tăng cao, do mọi gói tin đều phải đi qua hai lần kết nối thay vì một.
+
+### 3.2. Tường lửa trạng thái
+
+Khác với việc soi từng gói tin riêng lẻ, **Stateful Firewall** lưu lại thông tin về các kết nối đang mở và dùng ngữ cảnh đó để phân tích lưu lượng. Vì không phải kiểm tra lại từng gói, nó xử lý nhanh hơn tường lửa dựa trên proxy.
+
+Kiểu tường lửa này ra quyết định dựa trên nhiều ngữ cảnh. Chẳng hạn, nếu nó ghi nhận rằng một kết nối đi ra đang yêu cầu một loại phản hồi nhất định, thì chỉ những gói tin vào khớp với phản hồi đó mới được phép đi qua. Nhờ giữ mọi cổng ở trạng thái đóng cho tới khi có yêu cầu hợp lệ, nó cũng gây khó khăn cho kỹ thuật **Port Scanning**.
+
+Điểm yếu đã biết của tường lửa trạng thái là nó có thể bị đánh lừa: kẻ tấn công dụ client gửi một yêu cầu hợp lệ, rồi lợi dụng việc tường lửa đã "mở đường" cho loại phản hồi tương ứng để tuồn gói tin độc hại qua. Các trang web không an toàn có thể dùng JavaScript để tạo ra những yêu cầu giả mạo ngay từ trình duyệt của người dùng.
+
+### 3.3. Tường lửa thế hệ mới (NGFW)
+
+**NGFW** (Next-Generation Firewall) thừa hưởng toàn bộ năng lực của tường lửa truyền thống, đồng thời bổ sung các tính năng kiểm tra ở những tầng cao hơn của mô hình OSI:
+
+-   **Deep Packet Inspection (DPI):** kiểm tra sâu hơn nhiều so với tường lửa truyền thống, có thể đọc cả phần nội dung gói tin và xác định ứng dụng nào đang được truy cập, nhờ đó áp được các quy tắc lọc chi tiết hơn.
+-   **Application Awareness:** nhận biết ứng dụng nào đang chạy và dùng cổng nào, qua đó ngăn một số loại **malware** có hành vi kết thúc tiến trình rồi chiếm lấy cổng của nó.
+-   **Identity Awareness:** áp quy tắc dựa trên danh tính, chẳng hạn máy tính đang được dùng hoặc người dùng đang đăng nhập.
+-   **Sandboxing:** cô lập các đoạn mã gắn với gói tin đến và chạy thử trong môi trường cách ly để xác minh chúng không có hành vi độc hại trước khi cho phép vào mạng.
+
+### 3.4. Tường lửa ứng dụng web (WAF)
+
+Nếu tường lửa truyền thống bảo vệ mạng riêng khỏi những ứng dụng web độc hại, thì **WAF** (Web Application Firewall) bảo vệ ứng dụng web khỏi người dùng độc hại. WAF lọc và giám sát lưu lượng **HTTP** giữa ứng dụng web và Internet, tập trung ngăn các đòn tấn công nhắm vào tầng ứng dụng như **SQL Injection**, **Cross-Site Scripting (XSS)**, **Cross-Site Request Forgery** hay file inclusion.
+
+Về bản chất, WAF là một dạng **Reverse Proxy** đặt trước ứng dụng web, tạo ra một tấm khiên giữa ứng dụng và Internet: client bắt buộc phải đi qua WAF trước khi chạm tới server. WAF vận hành dựa trên một tập quy tắc thường được gọi là policy; giá trị của nó nằm ở tốc độ và sự dễ dàng khi sửa đổi policy, cho phép phản ứng nhanh với các vector tấn công thay đổi liên tục (ví dụ bật **rate limiting** ngay trong lúc xảy ra tấn công DDoS).
+
+### 3.5. Tường lửa dưới dạng dịch vụ (FWaaS)
+
+**FWaaS** (Firewall-as-a-Service), còn gọi là cloud firewall, là mô hình phân phối năng lực tường lửa qua cloud. Nó tạo ra một hàng rào ảo bao quanh nền tảng, hạ tầng và ứng dụng cloud, tương tự cách tường lửa truyền thống tạo hàng rào quanh mạng nội bộ của một tổ chức. FWaaS thường phù hợp hơn với môi trường cloud và **multi-cloud** so với tường lửa phần cứng truyền thống.
+
+---
+
+## 4. Tường lửa Mạng và Cách Triển khai
+
+**Network Firewall** là bất kỳ tường lửa nào bảo vệ một mạng. Theo định nghĩa đó, gần như mọi tường lửa bảo mật đều là tường lửa mạng, mặc dù tường lửa cũng có thể bảo vệ từng máy riêng lẻ.
+
+Xét theo hình thức triển khai, tường lửa ban đầu là những thiết bị phần cứng chuyên dụng. Ngày nay, phần lớn tường lửa là phần mềm, có thể chạy trên nhiều loại phần cứng khác nhau, trong khi FWaaS được vận hành hoàn toàn trên cloud.
+
+> [!IMPORTANT]
+> Tường lửa chỉ là một thành phần trong bức tranh bảo mật mạng. Một chiến lược đầy đủ còn bao gồm **Access Control**, xác thực người dùng và **DDoS Mitigation**.
+
+---
+
+## 5. Lịch sử Hình thành
+
+Tường lửa ra đời vào cuối thập niên 1980. Thế hệ đầu tiên hoạt động ở mức gói tin, tức **Packet Filtering**: nó quyết định cho phép hay chặn từng gói dựa trên việc đọc header tầng mạng và tầng giao vận, cụ thể là địa chỉ IP nguồn, IP đích và cổng (có thể hình dung như việc đọc phần "người gửi" và "người nhận" trên một phong bì thư). Cách này ngăn được lưu lượng bất hợp pháp và chặn đứng nhiều cuộc tấn công malware.
+
+Thế hệ kế tiếp bổ sung năng lực trạng thái (**Stateful**), rồi các thế hệ mới hơn như **NGFW** mở rộng khả năng kiểm tra lên tầng ứng dụng. Cách triển khai cũng thay đổi tương ứng: từ thiết bị phần cứng cắm trực tiếp vào hạ tầng, tường lửa dần chuyển sang dạng phần mềm hoặc chạy ảo trên cloud khi các quy trình nghiệp vụ dịch chuyển lên cloud, vì ép toàn bộ lưu lượng đi qua một chiếc hộp vật lý trở nên kém hiệu quả.
+
+---
+
+## 6. Tổng kết
+
+Sơ đồ dưới đây mô tả vị trí và vai trò quyết định của tường lửa: mọi lưu lượng, dù vào hay ra, đều phải đối chiếu với **Rule Set** trước khi được chuyển tiếp hoặc bị loại bỏ.
+
+```mermaid
+flowchart LR
+    internet(("Internet<br/>Mạng Không Tin Cậy"))
+    firewall{"Tường lửa<br/>Đối chiếu Rule Set"}
+    internal(("Mạng Nội bộ<br/>Mạng Tin Cậy"))
+    drop(["Gói tin bị Chặn"])
+
+    internet -->|"Inbound Traffic"| firewall
+    internal -->|"Outbound Traffic"| firewall
+    firewall -->|"Rule: Allow"| internal
+    firewall -->|"Rule: Allow"| internet
+    firewall -->|"Rule: Block"| drop
+```
+
+Tường lửa là điểm kiểm soát trung tâm đối với dòng dữ liệu ra vào một mạng, hoạt động dựa trên một tập quy tắc bảo mật định trước. Nó phải giám sát cả hai chiều, bởi mối đe dọa có thể đến từ ngoài vào lẫn từ bên trong rò rỉ ra. Qua các thế hệ, tường lửa tiến từ **Packet Filtering** đơn giản, qua **Stateful** nhanh và có ngữ cảnh, tới **NGFW** kiểm tra sâu và **WAF** bảo vệ riêng tầng ứng dụng web, cùng **FWaaS** phù hợp cho hạ tầng cloud. Chọn đúng nhóm tường lửa cho đúng tầng cần bảo vệ chính là nguyên tắc cốt lõi của **Defense in Depth**.
+
+---
+
+## Liên quan
+
+*   [Proxy và Reverse Proxy](./the_importance_of_proxy_and_reverse_proxies.md) — cùng nằm trên trục **Intermediary**: **WAF** là một **Reverse Proxy**, còn tường lửa dựa trên proxy cũng ngắt kết nối trực tiếp giữa client và server như một **Proxy**.
+*   [Hướng dẫn toàn diện về NAT](../02_routing/nat.md) — làm rõ ranh giới giữa **NAT** và tường lửa: NAT chỉ che giấu địa chỉ nên cung cấp lớp bảo vệ "tình cờ", khác với tường lửa ra quyết định thực sự dựa trên **Rule Set** tường minh.
+*   [Bộ Giao thức TCP/IP và So sánh với OSI](../00_osi_model/tcp_ip_vs_osi.md) — cung cấp bản đồ phòng thủ theo tầng, giải thích vì sao **WAF** đặt ở tầng Ứng dụng còn tường lửa mạng đặt ở tầng Mạng và Giao vận.
+
+---
+[← Back to README](../README.md)

@@ -2,6 +2,8 @@
 
 Chúng ta không thể cứ thế gửi các gói tin IP với dữ liệu ở dạng **plaintext** mà bất kỳ ai trên mạng cũng có thể đọc được, vì vậy cần một tiêu chuẩn để mã hóa giao tiếp — đó chính là **TLS (Transport Layer Security)**. Bài viết đi qua các khái niệm cốt lõi của TLS: vị trí trong mô hình mạng, bài toán trao đổi khóa, cách hoạt động của **TLS 1.2 Handshake** với **RSA**, lỗ hổng của RSA, và giải pháp **Diffie-Hellman** trong TLS 1.3.
 
+Về mặt lịch sử, IETF công bố phiên bản TLS đầu tiên vào năm 1999, và phiên bản mới nhất — **TLS 1.3** — ra đời năm 2018. TLS kế thừa và thay thế giao thức **SSL (Secure Sockets Layer)** do Netscape phát triển; do di sản này, hai thuật ngữ "TLS" và "SSL" đôi khi vẫn được dùng lẫn lộn (xem thêm [Tổng quan DNS, TLS và HTTPS](./introduce.md)). Ngoài việc bảo vệ website, TLS còn được dùng để mã hóa email, ứng dụng nhắn tin và thoại VoIP.
+
 ## Table of Contents
 
 -   [1. TLS nằm ở đâu trong Mô hình OSI và TCP/IP?](#1-tls-nằm-ở-đâu-trong-mô-hình-osi-và-tcpip)
@@ -185,9 +187,9 @@ Nếu chỉ trao đổi $A$ và $B$ đơn thuần, kẻ đứng giữa có thể
 
 ## 8. TLS 1.3 - Nhanh hơn, An toàn hơn
 
-TLS 1.2 vẫn duy trì RSA key transport vì mục đích tương thích ngược, nhưng **TLS 1.3** đã loại bỏ hoàn toàn RSA và các thuật toán không hỗ trợ PFS.
+TLS 1.2 vẫn duy trì RSA key transport, nhưng **TLS 1.3** đã loại bỏ **RSA key transport** cùng các thuật toán không hỗ trợ PFS. Cần phân biệt rõ: RSA **vẫn được dùng hợp lệ** trong TLS 1.3 cho **chữ ký số** xác thực danh tính Server — chỉ cơ chế trao đổi khóa tĩnh bằng RSA bị loại bỏ.
 
-- **Bắt buộc Forward Secrecy:** 100% các phiên trao đổi khóa đều phải dùng các thuật toán tạm thời hỗ trợ PFS (chủ yếu là ECDHE như X25519 hoặc P-256).
+- **Bắt buộc Forward Secrecy:** 100% các phiên trao đổi khóa đều phải dùng các thuật toán tạm thời hỗ trợ PFS (chủ yếu là ECDHE, ví dụ dùng nhóm đường cong X25519 hoặc P-256; TLS 1.3 cũng hỗ trợ cả FFDHE).
 - **Tối ưu hóa độ trễ (Chỉ 1-RTT Handshake):**
     - Trong TLS 1.2, Client và Server cần 2 round-trip (RTT) để thương lượng thông số rồi mới trao đổi khóa.
     - TLS 1.3 giả định trước nhóm đường cong phổ biến: Client gửi luôn phần chia sẻ khóa công khai ($g^x$) ngay trong gói tin **Client Hello** đầu tiên (`Key Share`). Server lập tức tính ra Session Key và phản hồi lại phần của mình ($g^y$) cùng Certificate. Handshake hoàn tất chỉ sau **1-RTT**.

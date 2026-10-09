@@ -311,6 +311,7 @@ Bằng cách này, bộ cân bằng tải sử dụng kỹ thuật NAT để ph�
 ## Liên quan
 
 *   [IP Address, Subnet, và Default Gateway](../01_internet_protocol/the_ip_building_blocks.md) — nền tảng cho NAT: **Subnet Mask** định nghĩa ranh giới Network/Host mà NAT vận hành trên đó để phân vùng địa chỉ Private ↔ Public.
+*   [Tường lửa (Firewall)](../07_others/what_is_a_firewall.md) — phân biệt NAT với tường lửa: NAT chỉ che giấu địa chỉ nên cung cấp lớp bảo vệ "tình cờ", còn tường lửa ra quyết định dựa trên Rule Set tường minh.
 
 ---
 [← Back to README](../README.md)

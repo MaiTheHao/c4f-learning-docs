@@ -36,7 +36,7 @@ Nhóm này theo dõi hành trình bảo mật hóa dòng dữ liệu mạng từ
 
 ## Kiến trúc Hệ thống Mạng (Network System Architecture)
 
-Ở biên ứng dụng, bài toán chuyển từ giao thức sang quy hoạch hệ thống chịu tải. Bài về **Proxy** và **Reverse Proxy** phân tích vai trò trung gian hóa lưu lượng, từ caching, kiểm soát truy cập đến che giấu kiến trúc nội bộ. Bài về **Load Balancing** so sánh cân bằng tải ở **L4** và **L7**: khác biệt về tầng thao tác, độ sâu hiểu biết giao thức, hiệu năng và độ linh hoạt định tuyến, làm cơ sở lựa chọn cho kiến trúc hệ thống phân tán. [Xem chi tiết Proxy và Reverse Proxy](./07_others/the_importance_of_proxy_and_reverse_proxies.md). [Xem chi tiết Cân bằng tải L4 vs L7](./07_others/load_balancing_at_l4_vs_l7.md).
+Ở biên ứng dụng, bài toán chuyển từ giao thức sang quy hoạch hệ thống chịu tải. Bài về **Proxy** và **Reverse Proxy** phân tích vai trò trung gian hóa lưu lượng, từ caching, kiểm soát truy cập đến che giấu kiến trúc nội bộ. Bài về **Load Balancing** so sánh cân bằng tải ở **L4** và **L7**: khác biệt về tầng thao tác, độ sâu hiểu biết giao thức, hiệu năng và độ linh hoạt định tuyến, làm cơ sở lựa chọn cho kiến trúc hệ thống phân tán. [Xem chi tiết Proxy và Reverse Proxy](./07_others/the_importance_of_proxy_and_reverse_proxies.md). [Xem chi tiết Cân bằng tải L4 vs L7](./07_others/load_balancing_at_l4_vs_l7.md). Khép lại nhóm là **Tường lửa (Firewall)**, đóng vai trò điểm kiểm soát trung tâm đối với dòng lưu lượng ra vào mạng; nó tiến hóa từ **Packet Filtering** qua **Stateful** tới **NGFW**, **WAF** và **FWaaS** cho hạ tầng cloud. [Xem chi tiết Tường lửa (Firewall)](./07_others/what_is_a_firewall.md).
 
 ---
 [← Back to README](../README.md)

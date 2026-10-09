@@ -178,4 +178,10 @@ sequenceDiagram
 ```
 
 ---
+
+## Liên quan
+
+*   [Tường lửa (Firewall)](./what_is_a_firewall.md) — cùng nằm trên trục **Intermediary**: **WAF** là một Reverse Proxy đứng trước ứng dụng web, còn tường lửa dựa trên proxy cũng ngắt kết nối trực tiếp giữa client và server.
+
+---
 [← Back to README](../README.md)

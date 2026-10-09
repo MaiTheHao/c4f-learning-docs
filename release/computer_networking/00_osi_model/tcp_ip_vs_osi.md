@@ -204,4 +204,10 @@ Trong kỷ nguyên điện toán đám mây và an ninh mạng hiện đại, m�
 *   [← Quay lại: Mô hình Tham chiếu OSI 7 Tầng](./osi_7_layers.md)
 
 ---
+
+## Liên quan
+
+*   [Tường lửa (Firewall)](../07_others/what_is_a_firewall.md) — bản đồ phòng thủ theo tầng của OSI lý giải vì sao **WAF** đặt ở tầng Ứng dụng còn tường lửa mạng đặt ở tầng Mạng và Giao vận.
+
+---
 [← Back to README](../README.md)
