@@ -22,6 +22,8 @@ Về cơ bản, một `TCP segment` được đóng gói bên trong một gói t
 
 ## 2. Phân tích Cấu trúc chi tiết của TCP Header
 
+![alt text](../assets/TCPSegment.png)
+
 Header của TCP chứa nhiều trường quan trọng để quản lý kết nối, bao gồm số thứ tự, số xác nhận, kiểm soát luồng, và nhiều hơn nữa.
 
 ### 2.1. Source Port và Destination Port
@@ -33,7 +35,7 @@ Header của TCP chứa nhiều trường quan trọng để quản lý kết n�
 ### 2.2. Sequence Number và Acknowledgment Number
 
 -   **Sequence Number** (Số thứ tự, 32 bits): Đây là một số duy nhất cho mỗi segment được gửi đi. Nó liên tục tăng trong suốt quá trình truyền dữ liệu để đảm bảo các gói tin được sắp xếp đúng thứ tự ở phía nhận.
-    -   📌 **Ghi nhớ:** Với kích thước 32 bits, `Sequence Number` có thể đạt tới khoảng 4 tỷ giá trị. Tuy nhiên, trong một kết nối có lưu lượng truyền tải rất lớn, con số này có thể bị dùng hết và quay vòng (**wrap around**) trở về 0.
+    -   **Ghi nhớ:** Với kích thước 32 bits, `Sequence Number` có thể đạt tới khoảng 4 tỷ giá trị. Tuy nhiên, trong một kết nối có lưu lượng truyền tải rất lớn, con số này có thể bị dùng hết và quay vòng (**wrap around**) trở về 0.
 -   **Acknowledgment Number** (Số xác nhận, 32 bits): Khi cờ `ACK` được bật, trường này chứa giá trị của `Sequence Number` tiếp theo mà bên nhận đang mong đợi. Điều này cho phép bên gửi biết rằng dữ liệu đã được nhận thành công.
     -   Việc có cả hai trường `Sequence` và `Acknowledgment` cho phép một thiết bị vừa gửi dữ liệu mới (với `Sequence Number` của riêng nó) vừa xác nhận dữ liệu đã nhận được trong cùng một segment.
 
@@ -57,11 +59,13 @@ Header của TCP chứa nhiều trường quan trọng để quản lý kết n�
 
 ## 3. Maximum Segment Size (MSS) và mối liên quan với MTU
 
+![alt text](../assets/TCPMSSMTU.png)
+
 **MSS (Maximum Segment Size)** là một trong những khái niệm quan trọng nhất, đặc biệt khi bạn gửi một lượng lớn dữ liệu như tải lên một tệp tin. MSS xác định lượng dữ liệu tối đa có thể chứa trong một `TCP segment` duy nhất.
 
 Giá trị của MSS phụ thuộc trực tiếp vào **MTU (Maximum Transmission Unit)** của mạng. MTU là kích thước tối đa của một khung dữ liệu (**frame**) có thể được truyền đi trên mạng.
 
-💡 **Mẹo:** Cách tính MSS phổ biến nhất dựa trên MTU tiêu chuẩn của Internet là 1500 bytes:
+**Mẹo:** Cách tính MSS phổ biến nhất dựa trên MTU tiêu chuẩn của Internet là 1500 bytes:
 
 > **MSS = MTU - Kích thước IP Header - Kích thước TCP Header**
 >

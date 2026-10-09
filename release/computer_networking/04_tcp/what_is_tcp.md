@@ -59,6 +59,8 @@ TCP là giao thức lớp **Transport** cốt lõi của Internet, đảm bảo 
 
 -   **Mục đích:** Quy trình bắt tay ba bước được thực hiện để hai bên **đồng bộ hóa số thứ tự (Synchronize Sequence Numbers)** với nhau, tạo tiền đề cho việc trao đổi dữ liệu một cách đáng tin cậy.
 
+![alt text](../assets/TCPHanshake.png)
+
 -   **Quy trình 3 bước:**
 
     1.  **SYN:** Client gửi một gói tin có cờ **SYN** (Synchronize) đến server. Gói tin này chứa số thứ tự ban đầu do client khởi tạo (ví dụ: 1000).
