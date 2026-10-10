@@ -5,7 +5,7 @@
 - [Ví dụ](#ví-dụ)
 - [Quy trình vận hành](#quy-trình-vận-hành)
 - [Điều API này không làm](#điều-api-này-không-làm)
-- [So với ProxyFactory](#so-với-proxyfactory)
+- [So với ProxyFactory](#so-với-proxy_factory)
 - [Nguồn chính thức](#nguồn-chính-thức)
 - [Related](#related)
 
@@ -87,7 +87,7 @@ Dù tên có chữ `AspectJ`, factory này **không tự thực hiện compile-t
 
 ## Related
 
-*   [API tham chiếu: ProxyFactory](./proxyfactory.md) — API nền tảng dùng advice/advisor tường minh mà factory này bao bọc.
+*   [API tham chiếu: ProxyFactory](./proxy_factory.md) — API nền tảng dùng advice/advisor tường minh mà factory này bao bọc.
 
 ---
 

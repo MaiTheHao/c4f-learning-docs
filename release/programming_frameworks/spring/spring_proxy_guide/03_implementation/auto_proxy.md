@@ -1,11 +1,11 @@
-# `@Aspect`, `@EnableAspectJAutoProxy` và cơ chế tự động
+# Cơ chế auto-proxy: khi nào Spring tạo proxy cho bean
 
 ## Table of Contents
 - [Mục tiêu](#mục-tiêu)
 - [Các thành phần](#các-thành-phần)
 - [Ví dụ tối thiểu](#ví-dụ-tối-thiểu)
 - [Cần hiểu gì sau lớp annotation?](#cần-hiểu-gì-sau-lớp-annotation)
-- [Không đánh đồng @AspectJ và AspectJ weaving](#không-đánh-đồng-aspectj-và-aspectj-weaving)
+- [Phân biệt proxy và weaving](#phân-biệt-proxy-và-weaving)
 - [Tương tác với các tính năng Spring khác](#tương-tác-với-các-tính-năng-spring-khác)
 - [Checklist cấu hình](#checklist-cấu-hình)
 - [Nguồn chính thức](#nguồn-chính-thức)
@@ -15,20 +15,24 @@
 
 ## Mục tiêu
 
-Trong ứng dụng thông thường, developer muốn khai báo aspect một lần và để container tự áp dụng cho các bean/method phù hợp, thay vì gọi `new ProxyFactory(...)` ở mỗi nơi. Spring hỗ trợ cơ chế auto-proxy để đăng ký các bean proxy hóa trong container.
+Trong ứng dụng thông thường, developer muốn khai báo hành vi một lần và để container tự áp dụng cho các bean/method phù hợp, thay vì gọi `new ProxyFactory(...)` ở mỗi nơi. Spring cung cấp cơ chế **auto-proxy**: framework tự phát hiện bean cần bọc và đăng ký một bean proxy vào container.
+
+Tài liệu này tập trung vào **cơ chế tạo proxy** đó. Cách khai báo aspect, pointcut và advice thuộc [module AOP](../../aop/02_spring_aop/aspect_model.md).
 
 ---
 
 ## Các thành phần
 
-- `@Aspect`: đánh dấu lớp khai báo pointcut/advice theo phong cách annotation của AspectJ.
+- `@Aspect`: đánh dấu lớp khai báo pointcut/advice theo phong cách annotation của AspectJ. Cú pháp này thuộc [module AOP](../../aop/02_spring_aop/aspect_model.md).
 - `@Component` hoặc `@Bean`: đăng ký aspect như một bean Spring. Chỉ có `@Aspect` thường chưa đủ để component scanning tự phát hiện lớp.
-- `@EnableAspectJAutoProxy`: bật hỗ trợ xử lý aspect `@AspectJ` qua Spring AOP proxy trong cấu hình Java.
-- Auto-proxy infrastructure: xét các bean và quy tắc advisor để cung cấp proxy phù hợp.
+- `@EnableAspectJAutoProxy`: bật cơ chế auto-proxy xử lý aspect `@AspectJ` trong cấu hình Java.
+- Auto-proxy infrastructure: các bean post-processor xét từng bean và quy tắc advisor để quyết định bọc proxy cho bean nào.
 
 ---
 
 ## Ví dụ tối thiểu
+
+Kích hoạt auto-proxy trong cấu hình Java:
 
 ```java
 @Configuration
@@ -37,6 +41,8 @@ Trong ứng dụng thông thường, developer muốn khai báo aspect một l�
 class AopConfiguration {
 }
 ```
+
+Đăng ký một aspect như bean để container phát hiện:
 
 ```java
 @Aspect
@@ -76,22 +82,24 @@ flowchart TD
 
 ---
 
-## Không đánh đồng `@AspectJ` và AspectJ weaving
+## Phân biệt proxy và weaving
 
-Spring hỗ trợ cú pháp annotation và pointcut của mô hình `@AspectJ`, nhưng trong chế độ Spring AOP, lời gọi được xử lý bằng proxy. AspectJ weaving là cách tích hợp khác, cần cấu hình compile-time hoặc load-time weaving, và cho phạm vi join point rộng hơn. Chọn cách nào tùy yêu cầu, đặc biệt nếu cần bắt self-invocation, constructor hoặc field access.
+Spring hỗ trợ cú pháp annotation và pointcut của mô hình `@AspectJ`, nhưng trong chế độ Spring AOP, lời gọi được xử lý bằng **proxy**: hành vi được chèn quanh lời gọi mà không đổi bytecode. **Weaving** là cách tích hợp khác, sửa/đan logic advice vào bytecode khi compile hoặc load class, cần cấu hình riêng và cho phạm vi join point rộng hơn.
+
+Chọn cách nào tùy yêu cầu, đặc biệt nếu cần bắt self-invocation, constructor hoặc field access. Tiêu chí chọn được trình bày ở [Giới hạn proxy và khi nào cần cơ chế khác](../02_techniques/constraints_and_alternatives.md).
 
 ---
 
 ## Tương tác với các tính năng Spring khác
 
-Transaction, caching, async và các hạ tầng khác của Spring có thể sử dụng proxy/interceptor để thực thi hành vi của chúng. Không nhất thiết phải tự tạo `@Aspect` cho từng tính năng. Khi có nhiều cấu hình auto-proxy, hãy đọc tài liệu tính năng và kiểm tra thiết lập proxy được hợp nhất; một cấu hình global có thể ảnh hưởng đến nhiều hạ tầng cùng lúc.
+Transaction, caching, async và các hạ tầng khác của Spring cũng sử dụng proxy/interceptor để thực thi hành vi của chúng. Không nhất thiết phải tự tạo `@Aspect` cho từng tính năng. Khi có nhiều cấu hình auto-proxy, hãy đọc tài liệu tính năng và kiểm tra thiết lập proxy được hợp nhất; một cấu hình global có thể ảnh hưởng đến nhiều hạ tầng cùng lúc.
 
 ---
 
 ## Checklist cấu hình
 
-1. Aspect có thực sự được đăng ký thành bean?
-2. Cấu hình bật loại AOP tương ứng chưa?
+1. Aspect (hoặc advisor) có thực sự được đăng ký thành bean?
+2. Cấu hình bật cơ chế auto-proxy tương ứng chưa?
 3. Pointcut có khớp package, method, annotation và argument thực tế không?
 4. Bean cần advice có phải bean Spring quản lý không?
 5. Client có gọi thông qua reference proxy không?
@@ -102,7 +110,6 @@ Transaction, caching, async và các hạ tầng khác của Spring có thể s�
 
 ## Nguồn chính thức
 
-- [Declaring an Aspect](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/at-aspectj.html)
 - [Enabling @AspectJ Support](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj.html)
 - [Proxying Mechanisms](https://docs.spring.io/spring-framework/reference/core/aop/proxying.html)
 
@@ -110,8 +117,9 @@ Transaction, caching, async và các hạ tầng khác của Spring có thể s�
 
 ## Related
 
-*   [Thuật ngữ AOP](../01_nen_tang/thuat_ngu_aop.md) — vocabulary pointcut/advice/aspect mà lớp annotation dựa vào.
-*   [API tham chiếu: ProxyFactory](./proxyfactory.md) — con đường tạo proxy thủ công thay cho cơ chế auto-proxy.
+*   [AOP và Spring AOP](../../aop/README.md) — paradigm và mô hình aspect (pointcut, advice) mà auto-proxy dựa vào.
+*   [API tham chiếu: ProxyFactory](./proxy_factory.md) — con đường tạo proxy thủ công thay cho cơ chế auto-proxy.
+*   [Giới hạn proxy và khi nào cần cơ chế khác](../02_techniques/constraints_and_alternatives.md) — các ràng buộc khiến auto-proxy không kích hoạt advice.
 
 ---
 

@@ -191,7 +191,7 @@ Có thể ghi nhớ ba ý chính:
 
 ## Related
 
-*   [Ý đồ thiết kế của AOP và quan hệ với OOP](../aop/01_fundamentals/aop_design_and_oop.md) — cùng bàn về việc tách logic khỏi mã nghiệp vụ và mô-đun hóa theo concern.
+*   [Tổng quan AOP](../aop/01_fundamentals/aop_overview.md) — cùng bàn về việc tách logic khỏi mã nghiệp vụ và mô-đun hóa theo concern.
 
 ---
 [← Back to README](README.md)

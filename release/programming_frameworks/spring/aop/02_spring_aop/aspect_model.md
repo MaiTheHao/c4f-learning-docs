@@ -5,7 +5,7 @@
 - [Aspect và các thành phần cấu thành](#aspect-và-các-thành-phần-cấu-thành)
 - [Luồng xử lý qua proxy](#luồng-xử-lý-qua-proxy)
 - [Các loại Advice](#các-loại-advice)
-- [Đường đi khái quát của một lời gọi](#đường-đi-khái-quát-của-một-lời-gọi)
+- [Đọc và đặt tên pointcut](#đọc-và-đặt-tên-pointcut)
 - [Ý đồ thiết kế của Spring AOP](#ý-đồ-thiết-kế-của-spring-aop)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 - [Related](#related)
@@ -16,7 +16,9 @@
 
 Spring AOP là cơ chế AOP tích hợp với Spring Framework và Spring IoC container. Cơ chế này dùng proxy tại Runtime để áp dụng hành vi bổ sung quanh các lời gọi phương thức phù hợp trên Spring bean.
 
-Spring AOP được viết bằng Java thuần và tập trung vào **method execution join point**. Nó không đại diện cho toàn bộ khả năng của AOP: AspectJ hỗ trợ nhiều loại join point hơn, nên có thể phù hợp khi cần tác động đến các điểm thực thi mà mô hình proxy của Spring không bao phủ.
+Spring AOP được viết bằng Java thuần và tập trung vào **method execution join point**: nó chỉ hỗ trợ join point tại việc thực thi phương thức trên Spring bean, không trực tiếp hỗ trợ các join point như đọc hoặc ghi field. Vì vậy Spring AOP phù hợp với các concern quanh lời gọi phương thức, chẳng hạn quản lý giao dịch, logging và kiểm tra quyền.
+
+Mô hình này không đại diện cho toàn bộ khả năng của AOP: AspectJ hỗ trợ nhiều loại join point hơn, nên có thể phù hợp khi cần tác động đến các điểm thực thi mà mô hình proxy của Spring không bao phủ. Tiêu chí chọn giữa Spring AOP và AspectJ được trình bày ở [module proxy](../../spring_proxy_guide/02_techniques/constraints_and_alternatives.md).
 
 ---
 
@@ -43,24 +45,9 @@ Một lớp có `@Aspect` cũng không tự động trở thành Spring bean ch�
 
 ## Luồng xử lý qua proxy
 
-Sơ đồ mô tả luồng gọi điển hình khi client gọi một Spring bean thông qua proxy và advice phù hợp được áp dụng.
+Ở mức khái niệm, lời gọi từ client đi tới **AOP proxy**. Proxy xác định advice phù hợp theo cấu hình pointcut, chạy hành vi tương ứng, rồi chuyển tiếp lời gọi tới **target object**; kết quả hoặc exception được trả về theo đường đi tương ứng.
 
-```mermaid
-sequenceDiagram
-    participant C as Client
-    participant P as Spring Proxy
-    participant A as Advice
-    participant T as Target
-
-    C->>P: Gọi phương thức
-    P->>A: Chạy advice phù hợp
-    A->>T: Chuyển tiếp lời gọi
-    T-->>A: Trả kết quả hoặc ném lỗi
-    A-->>P: Xử lý sau lời gọi nếu phù hợp
-    P-->>C: Trả kết quả hoặc lỗi
-```
-
-Sơ đồ mang tính khái quát về luồng xử lý, không phản ánh chính xác mọi thứ tự thực thi trong mọi cấu hình Spring AOP; thứ tự thực tế phụ thuộc vào loại advice và cách cấu hình aspect.
+Đây là mô tả chung, không phải thứ tự tuyệt đối cho mọi tổ hợp advice: thứ tự thực tế phụ thuộc loại advice và thứ tự interceptor. Chi tiết cơ chế của đường đi này (proxy là object trung gian, lời gọi có đi qua proxy hay không, self-invocation, chuỗi interceptor) thuộc phạm vi cơ chế proxy, xem [Luồng gọi và self-invocation](../../spring_proxy_guide/01_foundations/call_flow_and_self_invocation.md).
 
 ---
 
@@ -78,13 +65,37 @@ Spring AOP cung cấp năm loại advice chính. Mỗi loại có ngữ nghĩa t
 
 Nên chọn loại advice có phạm vi năng lực hẹp nhất nhưng vẫn đáp ứng yêu cầu. Ví dụ, nếu chỉ cần xử lý kết quả sau khi phương thức hoàn tất bình thường, `After returning` thường rõ ràng hơn `Around`.
 
+Với `Around`, advice điều khiển lời gọi tại điểm gọi `proceed()`: nếu không gọi `proceed()` thì target có thể không chạy; nếu gọi nhiều lần thì target có thể chạy nhiều lần. Chỉ dùng retry hoặc nhiều lần gọi khi ngữ nghĩa nghiệp vụ và tính idempotent cho phép.
+
 ---
 
-## Đường đi khái quát của một lời gọi
+## Đọc và đặt tên pointcut
 
-Ở mức khái niệm, lời gọi phương thức được gửi đến proxy; proxy xác định advice phù hợp theo cấu hình pointcut; advice được thực thi theo ngữ nghĩa của nó; sau đó lời gọi có thể được chuyển tiếp đến target object. Kết quả hoặc exception được trả về theo đường đi tương ứng.
+Pointcut expression mô tả tập join point cần chọn. Ví dụ:
 
-Đây là mô tả khái quát, không phải thứ tự tuyệt đối cho mọi tổ hợp advice. Spring thiết lập proxy và các interceptor theo cấu hình ứng dụng.
+```java
+@Pointcut("execution(public * com.example.service..*(..))")
+void servicePublicMethods() {}
+```
+
+Đọc từ ngoài vào: chọn method execution; `public` là modifier; `*` là kiểu trả về bất kỳ; package `com.example.service..` và các package con; `*` là tên method bất kỳ; `(..)` là số lượng/kiểu tham số bất kỳ.
+
+Các designator thường gặp trong Spring AOP gồm `execution`, `within`, `this`, `target`, `args`, `@target`, `@args`, `@within`, `@annotation` và phần mở rộng Spring `bean`. Hỗ trợ cụ thể phải theo tài liệu Spring AOP; không phải mọi pointcut designator của AspectJ weaving đều hợp lệ trong Spring AOP.
+
+Các pointcut có tên giúp ý định rõ, tránh lặp biểu thức dài và cho phép kết hợp điều kiện:
+
+```java
+@Pointcut("within(com.example.web..*)")
+void inWebLayer() {}
+
+@Pointcut("execution(public * *(..))")
+void publicMethod() {}
+
+@Pointcut("inWebLayer() && publicMethod()")
+void publicWebMethod() {}
+```
+
+Pointcut là một quyết định thiết kế: biểu thức quá hẹp có thể khiến advice không chạy, biểu thức quá rộng có thể áp dụng hành vi ngoài dự kiến. Phạm vi cần thể hiện rõ các thành phần chịu tác động và nên được kiểm thử.
 
 ---
 
@@ -106,12 +117,16 @@ Các lựa chọn thiết kế chính gồm:
 - [Spring Framework: AOP Concepts](https://docs.spring.io/spring-framework/reference/core/aop/introduction-defn.html)
 - [Spring Framework: Spring AOP Capabilities and Goals](https://docs.spring.io/spring-framework/reference/core/aop/introduction-spring-defn.html)
 - [Spring Framework: AOP Proxies](https://docs.spring.io/spring-framework/reference/core/aop/introduction-proxies.html)
+- [Spring Framework: Declaring Pointcuts](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/pointcuts.html)
+- [Spring Framework: Declaring Advice](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/advice.html)
 
 ---
 
 ## Related
 
-*   [Proxy và các giới hạn của Spring AOP](./proxy_constraints.md) — phần tiếp theo đi sâu vào các ràng buộc thực tế khiến luồng proxy này không phải lúc nào cũng kích hoạt advice.
+*   [Tổng quan AOP](../01_fundamentals/aop_overview.md) — động cơ, khái niệm và Trade-off mà mô hình Spring này hiện thực hóa.
+*   [Spring Proxy Guide](../../spring_proxy_guide/README.md) — cơ chế proxy đứng sau mô hình: call path, JDK proxy và CGLIB, self-invocation, API tạo proxy.
 
 ---
+
 [← Back to README](README.md)

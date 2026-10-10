@@ -9,13 +9,11 @@
 - [Nguồn chính thức](#nguồn-chính-thức)
 - [Related](#related)
 
-**Độ sâu:** tham chiếu kỹ thuật. Dùng tài liệu này khi cần tạo proxy trực tiếp bằng Java code, chẳng hạn trong test, adapter hoặc một trường hợp cần điều khiển tường minh.
-
 ---
 
 ## Vai trò
 
-`org.springframework.aop.framework.ProxyFactory` tạo Spring AOP proxy từ target, cho phép thêm `Advice`/`Advisor` và lấy proxy qua `getProxy()`. Có thể dùng mà không cần Spring IoC, mặc dù ứng dụng thông thường nên để container quản lý các dependency và cấu hình AOP.
+`org.springframework.aop.framework.ProxyFactory` tạo Spring AOP proxy từ target, cho phép thêm `Advice`/`Advisor` và lấy proxy qua `getProxy()`. Có thể dùng mà không cần Spring IoC, mặc dù ứng dụng thông thường nên để container quản lý các dependency và cấu hình AOP. Dùng `ProxyFactory` trực tiếp khi cần tạo proxy bằng Java code, chẳng hạn trong test, adapter hoặc trường hợp cần điều khiển tường minh.
 
 ---
 
@@ -101,9 +99,9 @@ flowchart LR
 
 ## Related
 
-*   [@Aspect và cơ chế tự động tạo proxy](./annotation_va_auto_proxy.md) — lựa chọn tự động hóa thay vì tự dựng proxy bằng API.
-*   [API tham chiếu: AspectJProxyFactory](./aspectj_proxyfactory.md) — biến thể nhận aspect `@AspectJ` thay vì advice/advisor tường minh.
-*   [API/XML tham chiếu: ProxyFactoryBean](./proxyfactorybean.md) — biến thể để IoC container quản lý proxy.
+*   [Cơ chế auto-proxy](./auto_proxy.md) — lựa chọn tự động hóa thay vì tự dựng proxy bằng API.
+*   [API tham chiếu: AspectJProxyFactory](./aspectj_proxy_factory.md) — biến thể nhận aspect `@AspectJ` thay vì advice/advisor tường minh.
+*   [API/XML tham chiếu: ProxyFactoryBean](./proxy_factory_bean.md) — biến thể để IoC container quản lý proxy.
 
 ---
 

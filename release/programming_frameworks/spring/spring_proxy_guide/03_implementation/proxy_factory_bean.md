@@ -5,7 +5,7 @@
 - [Ví dụ XML minh họa](#ví-dụ-xml-minh-họa)
 - [Thuộc tính thường gặp](#thuộc-tính-thường-gặp)
 - [Thứ tự interceptor](#thứ-tự-interceptor)
-- [ProxyFactoryBean và auto-proxy khác nhau](#proxyfactorybean-và-auto-proxy-khác-nhau)
+- [ProxyFactoryBean và auto-proxy khác nhau](#proxy_factory_bean-và-auto-proxy-khác-nhau)
 - [Nguồn chính thức](#nguồn-chính-thức)
 - [Related](#related)
 
@@ -82,7 +82,7 @@ Nếu cấu hình `interceptorNames` là `audit`, rồi `transaction`, thứ t�
 
 ## Related
 
-*   [API tham chiếu: ProxyFactory](./proxyfactory.md) — cùng tạo proxy nhưng để Spring IoC quản lý vòng đời và dependency.
+*   [API tham chiếu: ProxyFactory](./proxy_factory.md) — cùng tạo proxy nhưng để Spring IoC quản lý vòng đời và dependency.
 
 ---
 

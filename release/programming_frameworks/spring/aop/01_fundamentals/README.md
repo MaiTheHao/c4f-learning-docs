@@ -4,9 +4,7 @@ Phần này giới thiệu động cơ hình thành AOP và vị trí của AOP 
 
 ## Nội dung
 
-Tài liệu đầu tiên giải thích định nghĩa, bối cảnh và các khái niệm nền tảng. [Xem Tổng quan về AOP](./aop_overview.md).
-
-Tài liệu tiếp theo phân tích AOP bổ sung cho OOP như thế nào, cùng các lợi ích và rủi ro khi áp dụng. [Xem Ý đồ thiết kế của AOP và quan hệ với OOP](./aop_design_and_oop.md).
+Tài liệu tổng quan giải thích định nghĩa, bối cảnh, quan hệ của AOP với OOP, các khái niệm cốt lõi cùng Trade-off khi áp dụng. [Xem Tổng quan AOP](./aop_overview.md).
 
 ---
 

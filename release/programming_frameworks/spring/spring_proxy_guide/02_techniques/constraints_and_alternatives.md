@@ -89,9 +89,8 @@ Weaving cung cấp phạm vi rộng hơn nhưng đem theo cấu hình build/runt
 
 ## Related
 
-*   [Luồng gọi và self-invocation](../01_nen_tang/luong_goi_va_self_invocation.md) — phân tích call path làm cơ sở cho giới hạn self-invocation.
-*   [JDK dynamic proxy và CGLIB](./jdk_proxy_va_cglib.md) — các giới hạn cơ chế proxy đứng sau nhiều ngoại lệ được liệt kê.
-*   [Chẩn đoán: vì sao advice không chạy?](../04_thuc_hanh/chan_doan_loi.md) — áp dụng các giới hạn này thành quy trình khoanh vùng lỗi.
+*   [Luồng gọi và self-invocation](../01_foundations/call_flow_and_self_invocation.md) — phân tích call path làm cơ sở cho giới hạn self-invocation.
+*   [JDK dynamic proxy và CGLIB](./jdk_proxy_vs_cglib.md) — các giới hạn cơ chế proxy đứng sau nhiều ngoại lệ được liệt kê.
 
 ---
 

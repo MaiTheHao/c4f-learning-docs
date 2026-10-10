@@ -5,7 +5,7 @@
 - [Đọc đúng hai hình minh họa](#đọc-đúng-hai-hình-minh-họa)
 - [Self-invocation: tình huống dễ gây nhầm](#self-invocation-tình-huống-dễ-gây-nhầm)
 - [Các cách xử lý, theo thứ tự ưu tiên thực tế](#các-cách-xử-lý-theo-thứ-tự-ưu-tiên-thực-tế)
-- [Một phân biệt quan trọng](#một-phân-biệt-quan-trọng)
+- [Phân biệt proxy và weaving](#phân-biệt-proxy-và-weaving)
 - [Câu hỏi tự kiểm tra](#câu-hỏi-tự-kiểm-tra)
 - [Nguồn chính thức](#nguồn-chính-thức)
 - [Related](#related)
@@ -83,13 +83,11 @@ flowchart TD
 
 ---
 
-## Một phân biệt quan trọng
+## Phân biệt proxy và weaving
 
-- `@AspectJ` là **cách khai báo aspect bằng annotation và pointcut expression kiểu AspectJ**.
-- Spring AOP dùng proxy để thực thi các aspect kiểu đó.
-- AspectJ weaving sửa/đan logic advice vào bytecode khi compile hoặc load class; vì vậy self-invocation không có cùng hạn chế proxy.
+`AspectJProxyFactory` tạo Spring AOP **proxy** áp dụng các aspect khai báo theo kiểu `@AspectJ`; tên gọi này không có nghĩa nó thực hiện weaving. **Weaving** sửa/đan logic advice vào bytecode khi compile hoặc load class, nên không có cùng hạn chế self-invocation như proxy.
 
-Tên `AspectJProxyFactory` cũng không có nghĩa là nó thực hiện weaving. Factory này tạo Spring AOP proxy được áp dụng các aspect khai báo theo kiểu `@AspectJ`.
+Đây là hai cơ chế khác nhau: proxy chèn hành vi quanh lời gọi mà không đổi bytecode, còn weaving tác động trực tiếp lên class. Phần paradigm AOP và các khái niệm liên quan xem [module AOP](../../aop/README.md).
 
 ---
 
@@ -111,8 +109,8 @@ Tên `AspectJProxyFactory` cũng không có nghĩa là nó thực hiện weaving
 
 ## Related
 
-*   [Mô hình nền tảng](./mo_hinh_nen_tang.md) — phần actor và vai trò của proxy mà call path này cụ thể hóa.
-*   [Giới hạn proxy và khi nào cần cơ chế khác](../02_ky_thuat/gioi_han_va_ngoai_le.md) — self-invocation là một giới hạn kiến trúc được phân loại đầy đủ ở đó.
+*   [Mô hình nền tảng](./proxy_model.md) — phần actor và vai trò của proxy mà call path này cụ thể hóa.
+*   [Giới hạn proxy và khi nào cần cơ chế khác](../02_techniques/constraints_and_alternatives.md) — self-invocation là một giới hạn kiến trúc được phân loại đầy đủ ở đó.
 
 ---
 

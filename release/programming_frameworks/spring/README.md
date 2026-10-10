@@ -4,7 +4,7 @@ Spring Framework là nền tảng phát triển ứng dụng Java theo mô hình
 
 ## AOP
 
-Spring AOP dùng proxy tại Runtime để áp dụng các concern xuyên suốt quanh lời gọi phương thức của Spring bean. Bộ tài liệu đi từ động cơ mô-đun hóa, quan hệ với OOP, đến mô hình Aspect và các giới hạn của proxy. [Xem AOP và Spring AOP](./aop/README.md).
+Phần này xây dựng paradigm AOP và mô hình Spring AOP ở mức khái niệm: động cơ mô-đun hóa concern xuyên suốt, quan hệ với OOP, các khái niệm aspect và pointcut/advice, cùng Trade-off khi áp dụng. [Xem AOP và Spring AOP](./aop/README.md).
 
 ## SpEL
 
@@ -12,7 +12,7 @@ Spring Expression Language cung cấp một ngôn ngữ biểu thức chung đ�
 
 ## Spring Proxy
 
-Bộ tài liệu chuyên sâu về Spring AOP dựa trên proxy: mô hình nền tảng, luồng gọi và self-invocation, lựa chọn JDK proxy hay CGLIB, cấu hình annotation, các API tạo proxy thủ công, giới hạn và chẩn đoán. [Xem Spring Proxy Guide](./spring_proxy_guide/README.md).
+Phần này đi sâu vào cơ chế proxy đứng sau mô hình AOP: proxy là gì và các actor, call path và self-invocation, lựa chọn JDK proxy hay CGLIB, cơ chế auto-proxy, các API tạo proxy thủ công và giới hạn của proxy. [Xem Spring Proxy Guide](./spring_proxy_guide/README.md).
 
 ---
 

@@ -87,7 +87,7 @@ Kiểm tra `AopUtils.isJdkDynamicProxy(bean)`, `AopUtils.isCglibProxy(bean)` và
 
 ## Related
 
-*   [Giới hạn proxy và khi nào cần cơ chế khác](./gioi_han_va_ngoai_le.md) — ranh giới `final`/`private` và self-invocation mà việc chọn cơ chế proxy không giải quyết được.
+*   [Giới hạn proxy và khi nào cần cơ chế khác](./constraints_and_alternatives.md) — ranh giới `final`/`private` và self-invocation mà việc chọn cơ chế proxy không giải quyết được.
 
 ---
 

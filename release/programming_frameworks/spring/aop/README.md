@@ -1,18 +1,14 @@
 # AOP và Spring AOP
 
-Bộ tài liệu này xây dựng kiến thức theo lộ trình từ động cơ mô-đun hóa các concern xuyên suốt, qua quan hệ giữa AOP và OOP, đến mô hình Aspect và các giới hạn Runtime của Spring AOP. Mỗi tài liệu tập trung vào một phạm vi riêng để người đọc có thể học theo thứ tự hoặc tra cứu từng chủ đề.
+Bộ tài liệu này xây dựng kiến thức theo lộ trình từ động cơ mô-đun hóa các concern xuyên suốt, qua quan hệ giữa AOP và OOP, đến mô hình Aspect mà Spring hiện thực hóa. Phạm vi của module là paradigm AOP và mô hình Spring AOP ở mức khái niệm; phần cơ chế proxy được tách sang [Spring Proxy Guide](../spring_proxy_guide/README.md) để tránh trùng lặp.
 
-## 01. Fundamentals
+## Nền tảng
 
-Phần nền tảng giải thích vấn đề mà AOP giải quyết, các mốc phát triển chính và cách AOP bổ sung cho OOP trong thiết kế phần mềm. [Xem tổng quan AOP](./01_fundamentals/aop_overview.md).
+Phần nền tảng giải thích vấn đề mà AOP giải quyết, quan hệ giữa AOP và OOP, các khái niệm cốt lõi và Trade-off khi dùng AOP. [Xem Tổng quan AOP](./01_fundamentals/aop_overview.md).
 
-Phần thiết kế phân tích mục tiêu mô-đun hóa, lợi ích và Trade-off khi dùng AOP, giúp xác định khi nào nên dùng aspect thay vì code tường minh. [Xem ý đồ thiết kế và quan hệ với OOP](./01_fundamentals/aop_design_and_oop.md).
+## Mô hình Spring AOP
 
-## 02. Spring AOP
-
-Tài liệu mô hình Spring AOP trình bày Aspect, Pointcut, Advice, Join Point, Target Object, Proxy và các loại Advice mà Spring hỗ trợ. [Xem mô hình Aspect trong Spring AOP](./02_spring_aop/aspect_model.md).
-
-Tài liệu về proxy tập trung vào phạm vi join point, điều kiện kích hoạt aspect, khác biệt giữa JDK dynamic proxy và CGLIB, self-invocation và tiêu chí cân nhắc AspectJ. [Xem proxy và các giới hạn](./02_spring_aop/proxy_constraints.md).
+Tài liệu mô hình Spring AOP trình bày Aspect, Pointcut, Advice, Join Point, Target Object, Proxy, các loại Advice mà Spring hỗ trợ và cách đọc pointcut. [Xem Mô hình Aspect trong Spring AOP](./02_spring_aop/aspect_model.md).
 
 ---
 
