@@ -72,7 +72,7 @@ Spring tạo proxy quanh các **method execution** trên object được Spring 
 
 - Muốn hiểu proxy được tạo cho bean khi nào và theo cơ chế nào.
 - Muốn biết vì sao một lời gọi cụ thể không đi qua proxy.
-- Muốn chọn giữa JDK dynamic proxy và CGLIB, hoặc tự tạo proxy bằng API.
+- Muốn chọn giữa JDK dynamic proxy và CGLIB.
 - Muốn kiểm tra tại sao một annotation như `@Transactional` có thể không chạy dù đã có trên method.
 
 ---

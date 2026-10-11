@@ -85,7 +85,7 @@ flowchart TD
 
 ## Phân biệt proxy và weaving
 
-`AspectJProxyFactory` tạo Spring AOP **proxy** áp dụng các aspect khai báo theo kiểu `@AspectJ`; tên gọi này không có nghĩa nó thực hiện weaving. **Weaving** sửa/đan logic advice vào bytecode khi compile hoặc load class, nên không có cùng hạn chế self-invocation như proxy.
+Không nên nhầm lẫn proxy với weaving chỉ vì tên gọi có nhắc tới AspectJ: Spring AOP vẫn tạo **proxy** để áp dụng các aspect khai báo theo kiểu `@AspectJ`, chứ không đan logic vào bytecode. **Weaving** sửa/đan logic advice vào bytecode khi compile hoặc load class, nên không có cùng hạn chế self-invocation như proxy.
 
 Đây là hai cơ chế khác nhau: proxy chèn hành vi quanh lời gọi mà không đổi bytecode, còn weaving tác động trực tiếp lên class. Phần paradigm AOP và các khái niệm liên quan xem [module AOP](../../aop/README.md).
 
@@ -102,7 +102,6 @@ flowchart TD
 ## Nguồn chính thức
 
 - [Understanding AOP Proxies](https://docs.spring.io/spring-framework/reference/core/aop/proxying.html)
-- [Programmatic Creation of `@AspectJ` Proxies](https://docs.spring.io/spring-framework/reference/core/aop/aspectj-programmatic.html)
 - [Using AspectJ with Spring Applications](https://docs.spring.io/spring-framework/reference/core/aop/using-aspectj.html)
 
 ---

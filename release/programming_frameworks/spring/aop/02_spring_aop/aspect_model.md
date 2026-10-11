@@ -125,7 +125,7 @@ Các lựa chọn thiết kế chính gồm:
 ## Related
 
 *   [Tổng quan AOP](../01_fundamentals/aop_overview.md) — động cơ, khái niệm và Trade-off mà mô hình Spring này hiện thực hóa.
-*   [Spring Proxy Guide](../../spring_proxy_guide/README.md) — cơ chế proxy đứng sau mô hình: call path, JDK proxy và CGLIB, self-invocation, API tạo proxy.
+*   [Spring Proxy Guide](../../spring_proxy_guide/README.md) — cơ chế proxy đứng sau mô hình: call path, JDK proxy và CGLIB, self-invocation.
 
 ---
 

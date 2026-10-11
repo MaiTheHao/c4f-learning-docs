@@ -41,8 +41,6 @@ Spring AOP proxy chủ yếu hỗ trợ method execution. Nếu cần intercept 
 |---|---|
 | Transaction, caching, async và method-based cross-cutting thông thường | Dùng cơ chế Spring tương ứng và kiểm chứng proxy/call path |
 | Advice tự viết cho các method của bean Spring | Spring AOP với `@Aspect` hoặc Advisor |
-| Tạo proxy cho một target trong code | `ProxyFactory` hoặc `AspectJProxyFactory` tùy cách khai báo advice |
-| Cần cấu hình proxy tường minh trong IoC/XML | `ProxyFactoryBean` |
 | Bắt self-invocation hoặc join point ngoài method execution | Xem xét AspectJ weaving |
 | Muốn kiểm soát tất cả method class | Kiểm tra khả năng override và chọn class-based proxy nếu phù hợp; không bỏ qua `final`/`private` |
 

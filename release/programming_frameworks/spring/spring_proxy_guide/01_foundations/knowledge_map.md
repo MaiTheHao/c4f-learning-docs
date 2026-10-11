@@ -17,9 +17,7 @@ Sau khi học xong, người đọc cần có thể giải thích bằng lời c
 3. Một lời gọi từ controller/service đi qua proxy như thế nào?
 4. Vì sao `this.otherMethod()` không đi qua proxy?
 5. Khi nào dùng JDK dynamic proxy, khi nào cần CGLIB?
-6. `@EnableAspectJAutoProxy` kích hoạt cơ chế auto-proxy và khiến Spring tạo proxy cho bean như thế nào?
-7. `ProxyFactory`, `AspectJProxyFactory` và `ProxyFactoryBean` khác nhau thế nào?
-8. Cần kiểm tra gì khi `@Transactional`, `@Async`, `@Cacheable` hoặc advice tùy chỉnh không chạy như mong đợi?
+6. Cần kiểm tra gì khi `@Transactional`, `@Async`, `@Cacheable` hoặc advice tùy chỉnh không chạy như mong đợi?
 
 Các câu hỏi về bản thân paradigm AOP (vì sao cần AOP, aspect/pointcut/advice/weaving là gì, quan hệ với OOP) thuộc [module AOP](../../aop/README.md).
 
@@ -32,10 +30,6 @@ Các câu hỏi về bản thân paradigm AOP (vì sao cần AOP, aspect/pointcu
 | [Mô hình nền tảng: proxy là gì và các actor](./proxy_model.md) | Nền tảng | Hiểu proxy là gì và các actor |
 | [Luồng gọi và self-invocation](./call_flow_and_self_invocation.md) | Nền tảng + kỹ thuật | Theo dõi call path và self-invocation |
 | [JDK dynamic proxy và CGLIB](../02_techniques/jdk_proxy_vs_cglib.md) | Kỹ thuật | Chọn cơ chế proxy |
-| [Cơ chế auto-proxy](../03_implementation/auto_proxy.md) | Triển khai | Cơ chế auto-proxy khiến Spring tạo proxy cho bean |
-| [ProxyFactory](../03_implementation/proxy_factory.md) | API tham chiếu | Tạo proxy bằng Java API tổng quát |
-| [AspectJProxyFactory](../03_implementation/aspectj_proxy_factory.md) | API tham chiếu | Dùng aspect viết theo @AspectJ để tạo proxy cụ thể |
-| [ProxyFactoryBean](../03_implementation/proxy_factory_bean.md) | API/XML tham chiếu | Tạo proxy được Spring IoC quản lý |
 | [Giới hạn proxy và khi nào cần cơ chế khác](../02_techniques/constraints_and_alternatives.md) | Kỹ thuật | Hiểu ranh giới của proxy và khi nào cần weaving |
 
 ---

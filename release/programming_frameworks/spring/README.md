@@ -12,7 +12,7 @@ Spring Expression Language cung cấp một ngôn ngữ biểu thức chung đ�
 
 ## Spring Proxy
 
-Phần này đi sâu vào cơ chế proxy đứng sau mô hình AOP: proxy là gì và các actor, call path và self-invocation, lựa chọn JDK proxy hay CGLIB, cơ chế auto-proxy, các API tạo proxy thủ công và giới hạn của proxy. [Xem Spring Proxy Guide](./spring_proxy_guide/README.md).
+Phần này đi sâu vào cơ chế proxy đứng sau mô hình AOP: proxy là gì và các actor, call path và self-invocation, lựa chọn JDK proxy hay CGLIB và các giới hạn của proxy. [Xem Spring Proxy Guide](./spring_proxy_guide/README.md).
 
 ---
 
