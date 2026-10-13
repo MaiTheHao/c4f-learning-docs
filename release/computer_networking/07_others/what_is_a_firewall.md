@@ -1,4 +1,4 @@
-# Tường lửa (Firewall): Người Gác cổng giữa Mạng Tin cậy và Internet
+# Tường lửa (Firewall)
 
 ## Table of Contents
 
@@ -7,11 +7,12 @@
 -   [3. Các loại Tường lửa](#3-các-loại-tường-lửa)
 -   [4. Tường lửa Mạng và Cách Triển khai](#4-tường-lửa-mạng-và-cách-triển-khai)
 -   [5. Lịch sử Hình thành](#5-lịch-sử-hình-thành)
--   [6. Tổng kết](#6-tổng-kết)
 
 ---
 
 ## 1. Tường lửa là gì?
+
+![alt text](../assets/what_is_firewall.png)
 
 Tường lửa là lớp phòng thủ đầu tiên của gần như mọi hạ tầng mạng: nó đứng giữa mạng tin cậy và mạng không tin cậy (thường là Internet) để giám sát, cho phép hoặc chặn từng luồng dữ liệu đi qua. Cụ thể hơn, tường lửa là một hệ thống bảo mật kiểm soát lưu lượng mạng dựa trên một tập quy tắc định trước, qua đó quyết định luồng dữ liệu nào được phép đi qua và luồng nào bị chặn lại.
 
@@ -44,6 +45,8 @@ Tường lửa tiến hóa qua nhiều thế hệ, mỗi thế hệ mở rộng 
 
 ### 3.1. Tường lửa dựa trên Proxy
 
+![alt text](../assets/ProxybasedFirewall.png)
+
 **Proxy-based Firewall** hoạt động như một **Proxy** đứng giữa client và server. Client kết nối tới tường lửa; tường lửa kiểm tra các gói tin đi ra rồi mở một kết nối riêng tới đích đến thật. Chiều ngược lại diễn ra tương tự: phản hồi từ server được tường lửa chặn lại, kiểm tra, rồi chuyển cho client qua một kết nối riêng. Hệ quả là client và server không bao giờ có kết nối trực tiếp với nhau.
 
 > [!TIP]
@@ -51,7 +54,17 @@ Tường lửa tiến hóa qua nhiều thế hệ, mỗi thế hệ mở rộng 
 
 Hạn chế lớn nhất của nhóm này chính là **latency**, đặc biệt khi lưu lượng tăng cao, do mọi gói tin đều phải đi qua hai lần kết nối thay vì một.
 
+Sơ đồ dưới cho thấy điểm mấu chốt: tường lửa không chuyển tiếp gói tin mà ngắt kết nối rồi mở hai kết nối riêng biệt về hai phía.
+
+```mermaid
+flowchart LR
+    client["Client"] -->|"Kết nối 1"| proxy["Proxy Firewall<br/>Ngắt và kiểm tra"]
+    proxy -->|"Kết nối 2 (mới)"| server["Server"]
+```
+
 ### 3.2. Tường lửa trạng thái
+
+![alt text](../assets/stateful_firewall.png)
 
 Khác với việc soi từng gói tin riêng lẻ, **Stateful Firewall** lưu lại thông tin về các kết nối đang mở và dùng ngữ cảnh đó để phân tích lưu lượng. Vì không phải kiểm tra lại từng gói, nó xử lý nhanh hơn tường lửa dựa trên proxy.
 
@@ -59,7 +72,20 @@ Kiểu tường lửa này ra quyết định dựa trên nhiều ngữ cảnh. 
 
 Điểm yếu đã biết của tường lửa trạng thái là nó có thể bị đánh lừa: kẻ tấn công dụ client gửi một yêu cầu hợp lệ, rồi lợi dụng việc tường lửa đã "mở đường" cho loại phản hồi tương ứng để tuồn gói tin độc hại qua. Các trang web không an toàn có thể dùng JavaScript để tạo ra những yêu cầu giả mạo ngay từ trình duyệt của người dùng.
 
+Lưu đồ dưới mô tả cách **State Table** biến mỗi kết nối đang mở thành ngữ cảnh để quyết định phản hồi nào được đi qua.
+
+```mermaid
+flowchart LR
+    client["Client"] -->|"Yêu cầu"| fw["Stateful Firewall"]
+    fw -->|"Ghi trạng thái"| table["State Table"]
+    fw -->|"Chuyển tiếp"| server["Server"]
+    server -->|"Phản hồi"| fw
+    fw -->|"Khớp state: cho qua"| client
+```
+
 ### 3.3. Tường lửa thế hệ mới (NGFW)
+
+![alt text](../assets/next_generation_firewall.png)
 
 **NGFW** (Next-Generation Firewall) thừa hưởng toàn bộ năng lực của tường lửa truyền thống, đồng thời bổ sung các tính năng kiểm tra ở những tầng cao hơn của mô hình OSI:
 
@@ -68,15 +94,54 @@ Kiểu tường lửa này ra quyết định dựa trên nhiều ngữ cảnh. 
 -   **Identity Awareness:** áp quy tắc dựa trên danh tính, chẳng hạn máy tính đang được dùng hoặc người dùng đang đăng nhập.
 -   **Sandboxing:** cô lập các đoạn mã gắn với gói tin đến và chạy thử trong môi trường cách ly để xác minh chúng không có hành vi độc hại trước khi cho phép vào mạng.
 
+Sơ đồ dưới gom bốn năng lực trên thành một chuỗi kiểm tra nhiều lớp trước khi ra quyết định.
+
+```mermaid
+flowchart TD
+    packet["Gói tin đến"] --> dpi["Deep Packet Inspection"]
+    dpi --> appaware["Application Awareness"]
+    appaware --> identity["Identity Awareness"]
+    identity --> sandbox["Sandboxing"]
+    sandbox --> decision{"Hợp lệ?"}
+    decision -->|"Có"| internal["Mạng nội bộ"]
+    decision -->|"Không"| drop["Chặn"]
+```
+
 ### 3.4. Tường lửa ứng dụng web (WAF)
+
+![alt text](../assets/web_application_firewall.png)
 
 Nếu tường lửa truyền thống bảo vệ mạng riêng khỏi những ứng dụng web độc hại, thì **WAF** (Web Application Firewall) bảo vệ ứng dụng web khỏi người dùng độc hại. WAF lọc và giám sát lưu lượng **HTTP** giữa ứng dụng web và Internet, tập trung ngăn các đòn tấn công nhắm vào tầng ứng dụng như **SQL Injection**, **Cross-Site Scripting (XSS)**, **Cross-Site Request Forgery** hay file inclusion.
 
 Về bản chất, WAF là một dạng **Reverse Proxy** đặt trước ứng dụng web, tạo ra một tấm khiên giữa ứng dụng và Internet: client bắt buộc phải đi qua WAF trước khi chạm tới server. WAF vận hành dựa trên một tập quy tắc thường được gọi là policy; giá trị của nó nằm ở tốc độ và sự dễ dàng khi sửa đổi policy, cho phép phản ứng nhanh với các vector tấn công thay đổi liên tục (ví dụ bật **rate limiting** ngay trong lúc xảy ra tấn công DDoS).
 
+Lưu đồ dưới cho thấy WAF chặn lưu lượng độc hại ngay trước khi nó chạm tới ứng dụng web.
+
+```mermaid
+flowchart LR
+    users["Người dùng"] -->|"HTTP"| waf["WAF<br/>Reverse Proxy"]
+    waf -->|"Lưu lượng hợp lệ"| app["Ứng dụng Web"]
+    waf -.->|"SQLi, XSS, CSRF"| block["Chặn"]
+```
+
 ### 3.5. Tường lửa dưới dạng dịch vụ (FWaaS)
 
+![alt text](../assets/firewall_as_a_service.png)
+
 **FWaaS** (Firewall-as-a-Service), còn gọi là cloud firewall, là mô hình phân phối năng lực tường lửa qua cloud. Nó tạo ra một hàng rào ảo bao quanh nền tảng, hạ tầng và ứng dụng cloud, tương tự cách tường lửa truyền thống tạo hàng rào quanh mạng nội bộ của một tổ chức. FWaaS thường phù hợp hơn với môi trường cloud và **multi-cloud** so với tường lửa phần cứng truyền thống.
+
+Sơ đồ dưới cho thấy FWaaS dựng hàng rào ảo bao quanh toàn bộ hạ tầng cloud thay vì một thiết bị vật lý.
+
+```mermaid
+flowchart LR
+    internet["Internet"] --> fwaas["FWaaS<br/>Cloud Firewall"]
+    subgraph cloudInfra["Hạ tầng Cloud"]
+        apps["Ứng dụng"]
+        data["Dữ liệu"]
+    end
+    fwaas --> apps
+    fwaas --> data
+```
 
 ---
 
@@ -98,24 +163,6 @@ Tường lửa ra đời vào cuối thập niên 1980. Thế hệ đầu tiên 
 Thế hệ kế tiếp bổ sung năng lực trạng thái (**Stateful**), rồi các thế hệ mới hơn như **NGFW** mở rộng khả năng kiểm tra lên tầng ứng dụng. Cách triển khai cũng thay đổi tương ứng: từ thiết bị phần cứng cắm trực tiếp vào hạ tầng, tường lửa dần chuyển sang dạng phần mềm hoặc chạy ảo trên cloud khi các quy trình nghiệp vụ dịch chuyển lên cloud, vì ép toàn bộ lưu lượng đi qua một chiếc hộp vật lý trở nên kém hiệu quả.
 
 ---
-
-## 6. Tổng kết
-
-Sơ đồ dưới đây mô tả vị trí và vai trò quyết định của tường lửa: mọi lưu lượng, dù vào hay ra, đều phải đối chiếu với **Rule Set** trước khi được chuyển tiếp hoặc bị loại bỏ.
-
-```mermaid
-flowchart LR
-    internet(("Internet<br/>Mạng Không Tin Cậy"))
-    firewall{"Tường lửa<br/>Đối chiếu Rule Set"}
-    internal(("Mạng Nội bộ<br/>Mạng Tin Cậy"))
-    drop(["Gói tin bị Chặn"])
-
-    internet -->|"Inbound Traffic"| firewall
-    internal -->|"Outbound Traffic"| firewall
-    firewall -->|"Rule: Allow"| internal
-    firewall -->|"Rule: Allow"| internet
-    firewall -->|"Rule: Block"| drop
-```
 
 Tường lửa là điểm kiểm soát trung tâm đối với dòng dữ liệu ra vào một mạng, hoạt động dựa trên một tập quy tắc bảo mật định trước. Nó phải giám sát cả hai chiều, bởi mối đe dọa có thể đến từ ngoài vào lẫn từ bên trong rò rỉ ra. Qua các thế hệ, tường lửa tiến từ **Packet Filtering** đơn giản, qua **Stateful** nhanh và có ngữ cảnh, tới **NGFW** kiểm tra sâu và **WAF** bảo vệ riêng tầng ứng dụng web, cùng **FWaaS** phù hợp cho hạ tầng cloud. Chọn đúng nhóm tường lửa cho đúng tầng cần bảo vệ chính là nguyên tắc cốt lõi của **Defense in Depth**.
 
