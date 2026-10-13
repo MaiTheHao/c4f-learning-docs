@@ -43,16 +43,6 @@ Tường lửa tiến hóa qua nhiều thế hệ, mỗi thế hệ mở rộng 
 | **WAF** | Lọc lưu lượng HTTP giữa ứng dụng web và Internet | Ứng dụng web |
 | **FWaaS** | Cung cấp năng lực tường lửa qua cloud | Hạ tầng cloud và multi-cloud |
 
-Bảng dưới diễn giải lại cùng năm nhóm đó bằng những thiết bị và dịch vụ mà học sinh, phụ huynh và nhà trường thực sự chạm tới hằng ngày.
-
-| Loại | Ví dụ ở nhà | Ví dụ ở trường |
-| :--- | :--- | :--- |
-| **Proxy-based** | Cài **Squid** trên một chiếc Raspberry Pi để chặn quảng cáo cho cả nhà; app proxy/VPN trên điện thoại | Phòng máy: mọi máy tính phải đi qua proxy của trường mới ra được Internet |
-| **Stateful** | Router Wi-Fi do nhà mạng cấp; **Windows Defender Firewall** trên laptop | Tường lửa mạng của trường đóng cổng, chỉ mở khi có kết nối hợp lệ |
-| **NGFW** | **Parental Control/HomeShield** trên router mesh (TP-Link Deco, Asus AiProtection) | Mạng trường chặn game/TikTok theo ứng dụng, không chỉ theo địa chỉ |
-| **WAF** | Blog WordPress cá nhân dùng **Cloudflare** gói miễn phí | Cổng thông tin/trang đăng nhập sinh viên bị chặn SQL Injection |
-| **FWaaS** | Gói "Internet an toàn" của nhà mạng, tường lửa quản lý trên cloud | Website của trường thuê firewall sẵn của cloud (AWS/Azure/Google) |
-
 ### 3.1. Tường lửa dựa trên Proxy
 
 ![alt text](../assets/ProxybasedFirewall.png)
