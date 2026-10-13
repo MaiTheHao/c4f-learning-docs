@@ -43,6 +43,16 @@ Tường lửa tiến hóa qua nhiều thế hệ, mỗi thế hệ mở rộng 
 | **WAF** | Lọc lưu lượng HTTP giữa ứng dụng web và Internet | Ứng dụng web |
 | **FWaaS** | Cung cấp năng lực tường lửa qua cloud | Hạ tầng cloud và multi-cloud |
 
+Bảng dưới diễn giải lại cùng năm nhóm đó bằng những thiết bị và dịch vụ mà học sinh, phụ huynh và nhà trường thực sự chạm tới hằng ngày.
+
+| Loại | Ví dụ ở nhà | Ví dụ ở trường |
+| :--- | :--- | :--- |
+| **Proxy-based** | Cài **Squid** trên một chiếc Raspberry Pi để chặn quảng cáo cho cả nhà; app proxy/VPN trên điện thoại | Phòng máy: mọi máy tính phải đi qua proxy của trường mới ra được Internet |
+| **Stateful** | Router Wi-Fi do nhà mạng cấp; **Windows Defender Firewall** trên laptop | Tường lửa mạng của trường đóng cổng, chỉ mở khi có kết nối hợp lệ |
+| **NGFW** | **Parental Control/HomeShield** trên router mesh (TP-Link Deco, Asus AiProtection) | Mạng trường chặn game/TikTok theo ứng dụng, không chỉ theo địa chỉ |
+| **WAF** | Blog WordPress cá nhân dùng **Cloudflare** gói miễn phí | Cổng thông tin/trang đăng nhập sinh viên bị chặn SQL Injection |
+| **FWaaS** | Gói "Internet an toàn" của nhà mạng, tường lửa quản lý trên cloud | Website của trường thuê firewall sẵn của cloud (AWS/Azure/Google) |
+
 ### 3.1. Tường lửa dựa trên Proxy
 
 ![alt text](../assets/ProxybasedFirewall.png)
@@ -61,6 +71,11 @@ flowchart LR
     client["Client"] -->|"Kết nối 1"| proxy["Proxy Firewall<br/>Ngắt và kiểm tra"]
     proxy -->|"Kết nối 2 (mới)"| server["Server"]
 ```
+
+> **Ví dụ thực tế:**
+>
+> -   **Ở trường:** phòng máy thường cấu hình mọi máy tính trỏ về một proxy server của trường. Muốn ra Internet, request phải đi qua nó, đúng nghĩa "ngắt kết nối rồi mở kết nối mới"; máy tính không nói chuyện trực tiếp với website.
+> -   **Ở nhà:** nhiều người cài **Squid** trên một chiếc Raspberry Pi để cả nhà cùng đi qua đó, nhờ vậy chặn được quảng cáo và website xấu ở cấp toàn mạng.
 
 ### 3.2. Tường lửa trạng thái
 
@@ -82,6 +97,13 @@ flowchart LR
     server -->|"Phản hồi"| fw
     fw -->|"Khớp state: cho qua"| client
 ```
+
+> **Ví dụ thực tế:**
+>
+> -   **Ở nhà (thiết bị mạng):** chiếc router Wi-Fi do nhà mạng cấp có tường lửa **stateful**. Khi bạn mở một trang web trên điện thoại, router ghi nhớ kết nối đó nên gói phản hồi biết đường quay về đúng điện thoại; ngược lại, một máy lạ từ ngoài gõ cửa vào sẽ bị chặn vì không có kết nối nào do bạn khởi tạo.
+> -   **Ở nhà (trên máy tính):** **Windows Defender Firewall** cũng là stateful, nó giám sát toàn bộ lưu lượng mạng và theo dõi trạng thái của từng kết nối.
+>
+> Cách phân biệt nhanh với proxy: router stateful **chuyển tiếp gói tin** và chỉ ghi nhớ trạng thái, còn proxy **ngắt kết nối rồi mở kết nối mới**. Router nhà bạn xử lý nhanh chính là nhờ vậy.
 
 ### 3.3. Tường lửa thế hệ mới (NGFW)
 
@@ -107,6 +129,11 @@ flowchart TD
     decision -->|"Không"| drop["Chặn"]
 ```
 
+> **Ví dụ thực tế:**
+>
+> -   **Ở nhà:** tính năng **Parental Controls / HomeShield** trên router mesh TP-Link Deco cho phép chặn theo ứng dụng (Blocked Apps), lọc nội dung độc hại, thậm chí chặn cả proxy/VPN mà con cài để lách. Đây chính là **Application Awareness** kết hợp **DPI** ở quy mô gia đình, một dạng "NGFW tí hon"; **Asus AiProtection** (hợp tác Trend Micro) cũng làm điều tương tự.
+> -   **Ở trường:** mạng trường không chặn theo IP hay cổng nữa mà nhận diện ứng dụng để chặn game, mạng xã hội, kể cả khi ứng dụng đổi cổng. Đây là điểm khác biệt cốt lõi so với tường lửa trạng thái.
+
 ### 3.4. Tường lửa ứng dụng web (WAF)
 
 ![alt text](../assets/web_application_firewall.png)
@@ -123,6 +150,11 @@ flowchart LR
     waf -->|"Lưu lượng hợp lệ"| app["Ứng dụng Web"]
     waf -.->|"SQLi, XSS, CSRF"| block["Chặn"]
 ```
+
+> **Ví dụ thực tế:**
+>
+> -   **Ở trường (minh họa):** giả sử cổng thông tin sinh viên có một ô đăng nhập. Nếu kẻ xấu nhập `' OR 1=1 --` vào ô mật khẩu để tấn công **SQL Injection**, WAF phát hiện và chặn ngay request đó trước khi nó chạm tới cơ sở dữ liệu, còn sinh viên bình thường không thấy gì khác.
+> -   **Ở nhà:** một blog WordPress cá nhân gắn **Cloudflare** gói miễn phí sẽ được Cloudflare WAF đứng trước lọc SQLi/XSS mà không cần tự cấu hình gì.
 
 ### 3.5. Tường lửa dưới dạng dịch vụ (FWaaS)
 
@@ -142,6 +174,11 @@ flowchart LR
     fwaas --> apps
     fwaas --> data
 ```
+
+> **Ví dụ thực tế:**
+>
+> -   **Ở trường:** website trường thay vì đặt trên một máy chủ trong trường thì thuê trên **AWS/Azure/Google Cloud**; khi đó firewall đi kèm cloud (**AWS Network Firewall**, **Azure Firewall**, **Google Cloud NGFW**) thay cho chiếc hộp phần cứng, nên không cần mua thiết bị mà chỉ cần bật dịch vụ.
+> -   **Ở nhà:** một số nhà mạng cung cấp gói "Internet an toàn", trong đó bộ lọc và tường lửa nằm trên cloud của nhà cung cấp, áp cho mọi thiết bị trong nhà mà không cần cài gì lên từng máy. Đây là tinh thần FWaaS: năng lực tường lửa được phân phối như một dịch vụ.
 
 ---
 
