@@ -23,7 +23,9 @@ Các tài liệu kỹ thuật đã được trực tiếp kiểm duyệt, rà so
 
 Các tài liệu ghi chú nhanh và chủ đề đang nghiên cứu:
 
-- [Database Internals](temporary/database/) — Cơ chế hoạt động của Cơ sở dữ liệu (MVCC, Index, Case Studies).
+- [Database Internals](temporary/database/README.md) — Cơ chế hoạt động của Cơ sở dữ liệu (MVCC, Index, Case Studies).
+- [Cryptography](temporary/cryptography/README.md) — Mật mã học và truy vấn trên dữ liệu mã hóa (Encryption, CryptDB, Onion Encryption).
+- [Docker](temporary/docker/README.md) — Nền tảng container và cô lập môi trường chạy cho AI Coding Agent (Sandbox, microVM).
 - [NGINX](temporary/nginx/) — Web Server & Reverse Proxy.
 - [Version Control System](temporary/version_control_system/) — Hệ thống quản lý phiên bản với Git & GitHub.
 
