@@ -40,6 +40,8 @@ Hãy phân tích cách thức Client Secret bảo vệ danh tính ứng dụng t
 
 ## 3. Giải pháp cho Public Client: PKCE
 
+![alt text](image-4.png)
+
 Đối với các ứng dụng công khai (Public Client) như Mobile App hay SPA, do hoàn toàn không có `client_secret`, nếu chúng ta áp dụng luồng Authorization Code Flow truyền thống, kẻ tấn công đánh cắp được Authorization Code sẽ lập tức đổi được Access Token mà không gặp bất kỳ chốt chặn nào.
 
 Để giải quyết triệt để lỗ hổng này, đặc tả **PKCE (Proof Key for Code Exchange - RFC 7636)** ra đời:

@@ -19,6 +19,8 @@ Trong đặc tả tiêu chuẩn OAuth 2.0 (RFC 6749 Section 2.1), **Client Type 
 
 Hệ thống phân chia thành hai loại chính:
 
+![alt text](image-1.png)
+
 | Loại ứng dụng | Thuật ngữ gốc | Đặc điểm mật mã cốt lõi |
 | :--- | :--- | :--- |
 | **Ứng dụng bảo mật** | **Confidential Client** | Có khả năng lưu trữ và bảo vệ tuyệt mật các khóa bí mật mật mã (như Client Secret) mà không bị lộ ra bên ngoài. |

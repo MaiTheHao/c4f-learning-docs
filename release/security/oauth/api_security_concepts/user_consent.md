@@ -27,6 +27,11 @@ Nhằm giải quyết rủi ro này, phiên bản OAuth ban đầu có hỗ tr�
 
 ## 2. Vai trò cốt lõi của Consent trong kiến trúc OAuth
 
+<div style="with:100%; display: flex; justify-content: space-between">
+  <img src="image-2.png"/>
+  <img src="image-3.png"/>
+</div>
+
 Màn hình đồng ý (**Consent Screen**) ra đời để tách biệt hoàn toàn thông tin xác thực của người dùng ra khỏi tầm kiểm soát của ứng dụng khách.
 
 *   **Cơ chế chuyển hướng (Redirect-based Flow):** Thay vì hỏi mật khẩu, ứng dụng khách chuyển hướng trình duyệt của người dùng sang cổng xác thực an toàn của máy chủ ủy quyền (**Authorization Server**).

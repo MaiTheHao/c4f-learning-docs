@@ -14,6 +14,8 @@ Tài liệu này cung cấp cái nhìn tổng quan, phân tích so sánh và ph�
 
 ---
 
+![alt text](image.png)
+
 ## 1. Tư duy Cốt lõi
 
 Để hiểu rõ sự khác biệt giữa hai giao thức này, hãy ghi nhớ định nghĩa ngắn gọn sau:

@@ -23,6 +23,8 @@ OAuth 2.0 giải quyết triệt để vấn đề này bằng cách giới thi�
 
 ## 2. Các vai trò chính trong đặc tả OAuth 2.0
 
+![alt text](image.png)
+
 Đặc tả tiêu chuẩn RFC 6749 định nghĩa rõ ràng 5 vai trò logic tham gia vào quy trình ủy quyền bảo mật:
 
 | Vai trò OAuth | Thuật ngữ thông thường | Mô tả nhiệm vụ |
