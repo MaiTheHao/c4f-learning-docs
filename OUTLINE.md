@@ -13,7 +13,8 @@ Các tài liệu kỹ thuật đã được trực tiếp kiểm duyệt, rà so
 - [Design Patterns](release/design_patterns/) — Các mẫu thiết kế phần mềm và nguyên lý OOP (SOLID, Creational, Behavioral).
 - [Programming Frameworks](release/programming_frameworks/) — Các framework lập trình (Spring: AOP, SpEL).
 - [Programming Languages](release/programming_languages/) — Chuyên đề ngôn ngữ lập trình (Java, JavaScript).
-- [Security](release/security/) — Xác thực và an toàn thông tin (JWT, OAuth).
+- [Security](release/security/) — Xác thực và an toàn thông tin (Cryptography, JWT, OAuth).
+- [Cryptography](release/security/cryptography/README.md) — Mật mã học và truy vấn trên dữ liệu mã hóa (Encryption, RSA, CryptDB, Onion Encryption).
 - [Software Architecture](release/software_architecture/) — Kiến trúc phần mềm và các quy luật thiết kế hệ thống (Fundamentals, Characteristics, Styles).
 - [Twelve-Factor App](release/twelve_factor/) — Phương pháp luận xây dựng ứng dụng SaaS / Cloud-native hiện đại.
 
@@ -24,7 +25,6 @@ Các tài liệu kỹ thuật đã được trực tiếp kiểm duyệt, rà so
 Các tài liệu ghi chú nhanh và chủ đề đang nghiên cứu:
 
 - [Database Internals](temporary/database/README.md) — Cơ chế hoạt động của Cơ sở dữ liệu (MVCC, Index, Case Studies).
-- [Cryptography](temporary/cryptography/README.md) — Mật mã học và truy vấn trên dữ liệu mã hóa (Encryption, CryptDB, Onion Encryption).
 - [Docker](temporary/docker/README.md) — Nền tảng container và cô lập môi trường chạy cho AI Coding Agent (Sandbox, microVM).
 - [NGINX](temporary/nginx/) — Web Server & Reverse Proxy.
 - [Version Control System](temporary/version_control_system/) — Hệ thống quản lý phiên bản với Git & GitHub.

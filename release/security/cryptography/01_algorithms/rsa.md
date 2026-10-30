@@ -227,4 +227,4 @@ Sau khi hoàn tất toàn bộ quy trình tính toán trên, cặp khóa RSA thu
 - **Private Key (Khóa bí mật)**: `(n, d)` — Dùng để giải mã dữ liệu $M = C^d \pmod n$ hoặc tạo chữ ký số.
 
 ---
-[← Back to README](README.md)
+[← Back to README](../README.md)

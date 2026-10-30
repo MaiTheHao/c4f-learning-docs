@@ -1,7 +1,5 @@
 # Encryption: Tổng quan, Thuật toán và Nền tảng Toán học
 
----
-
 ## Table of Contents
 
 - [1. Tổng quan & Thành phần của Encryption](#1-tổng-quan--thành-phần-của-encryption)
@@ -427,5 +425,5 @@ flowchart TD
 > * **Ứng dụng sản xuất:** HTTPS/TLS kết hợp cả hai — mã hóa bất đối xứng để thực hiện trao đổi khóa an toàn lúc bắt tay, sau đó chuyển sang mã hóa đối xứng để truyền tải dữ liệu.
 
 ---
-[← Back to README](README.md)
+[← Back to README](../README.md)
 

@@ -1,7 +1,5 @@
 # Vì sao độ dài dữ liệu không cần bằng độ dài khóa
 
----
-
 ## Table of Contents
 
 - [Hiểu lầm phổ biến](#hiểu-lầm-phổ-biến)
@@ -132,9 +130,9 @@ Ví dụ **AES-GCM** cung cấp cả bảo mật nội dung và xác thực toà
 
 ## Related
 
-- [Tổng quan Encryption](introduce.md) (cùng phân loại mã hóa đối xứng và bất đối xứng cùng mô hình **Hybrid Encryption** làm nền cho cách dùng khóa trong thực tế).
-- [Các lớp mã hóa trong CryptDB và Onion Encryption](cryptdb_cipher_levels_onion_encryption.md) (cùng nguyên lý **Trade-off** khi chọn cơ chế mã hóa theo mục đích truy vấn thay vì một quy tắc độ dài duy nhất).
-- [Chi tiết thuật toán RSA](algorithms/RSA.md) (cùng chủ đề quản lý khóa và quan hệ giữa kích thước khóa với độ an toàn).
+- [Tổng quan Encryption](encryption_overview.md) (cùng phân loại mã hóa đối xứng và bất đối xứng cùng mô hình **Hybrid Encryption** làm nền cho cách dùng khóa trong thực tế).
+- [Các lớp mã hóa trong CryptDB và Onion Encryption](../02_encrypted_query/cryptdb_cipher_levels_onion_encryption.md) (cùng nguyên lý **Trade-off** khi chọn cơ chế mã hóa theo mục đích truy vấn thay vì một quy tắc độ dài duy nhất).
+- [Chi tiết thuật toán RSA](../01_algorithms/rsa.md) (cùng chủ đề quản lý khóa và quan hệ giữa kích thước khóa với độ an toàn).
 
 ---
-[← Back to README](README.md)
+[← Back to README](../README.md)

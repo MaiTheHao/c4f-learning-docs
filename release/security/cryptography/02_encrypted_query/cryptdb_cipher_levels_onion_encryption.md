@@ -1,7 +1,5 @@
 # Các lớp mã hóa trong CryptDB và Onion Encryption
 
----
-
 ## Table of Contents
 
 - [Bài toán truy vấn trên dữ liệu mã hóa](#bài-toán-truy-vấn-trên-dữ-liệu-mã-hóa)
@@ -305,8 +303,8 @@ Ba điểm cần nhớ khi đánh giá **Trade-off**:
 
 ## Related
 
-- [Tổng quan Encryption](introduce.md) (cùng nguyên lý **Trade-off** giữa khả năng dùng dữ liệu và mức độ lộ thông tin, cùng mô hình kết hợp nhiều cơ chế thay vì một thuật toán duy nhất).
-- [Chi tiết thuật toán RSA](algorithms/RSA.md) (cùng họ mã hóa bất đối xứng, nền tảng thường gặp cho các biến thể **HOM** và trao đổi khóa).
+- [Tổng quan Encryption](../00_foundations/encryption_overview.md) (cùng nguyên lý **Trade-off** giữa khả năng dùng dữ liệu và mức độ lộ thông tin, cùng mô hình kết hợp nhiều cơ chế thay vì một thuật toán duy nhất).
+- [Chi tiết thuật toán RSA](../01_algorithms/rsa.md) (cùng họ mã hóa bất đối xứng, nền tảng thường gặp cho các biến thể **HOM** và trao đổi khóa).
 
 ---
-[← Back to README](README.md)
+[← Back to README](../README.md)
