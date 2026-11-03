@@ -16,7 +16,6 @@
 ## Danh mục Tài liệu
 
 1. **[01. Bản chất Modularity & Khung Đo lường](01_introduction.md)**: Định nghĩa nền tảng về Modularity, sự khác biệt giữa Modularity và Granularity, cùng ba trụ cột đo lường do Mark Richards & Neal Ford hệ thống hóa.
-2. **[02. Về Các Đại Lượng Đo Lường Modularity](02_modularity_metrics.md)**: Diễn giải chi tiết về thang đo Cohesion, công thức LCOM, hệ chỉ số Robert C. Martin ($C_a, C_e, A, I, D$) và các thuộc tính quản trị Connascence.
 
 ---
 

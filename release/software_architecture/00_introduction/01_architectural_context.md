@@ -204,6 +204,7 @@ Thay vì tìm kiếm một thiết kế hoàn hảo lý thuyết, kiến trúc s
 
 *   [Polymorphism](../../design_patterns/oop/polymorphism.md) — **Abstraction & Decoupling** mà Polymorphism cung cấp ở tầng OOP chính là công cụ kỹ thuật để hiện thực hóa **ranh giới module ổn định** mà kiến trúc phần mềm đặt ra.
 *   [Builder Pattern](../../design_patterns/creational/builder.md) — cùng nguyên lý **tách trách nhiệm xây dựng khỏi biểu diễn**: Builder ở tầng đối tượng, kiến trúc phần mềm ở tầng hệ thống — cùng một tư duy **Separation of Concerns** ở các cấp độ khác nhau.
+*   [Modularity Trong Kiến Trúc Phần Mềm](../01_modularity/01_introduction.md) — cùng nguyên lý **Trade-off theo bối cảnh**: quyết định chia hệ thống thành mô-đun ở mức nào cũng phải xuất phát từ ràng buộc thực tế, không từ một mô hình lý tưởng áp đặt sẵn.
 
 ---
 [← Back to README](README.md)
