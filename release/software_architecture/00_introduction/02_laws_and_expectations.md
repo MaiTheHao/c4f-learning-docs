@@ -31,7 +31,7 @@ Kỹ nghệ phần mềm không tồn tại giải pháp tối ưu tuyệt đố
 - **Tái sử dụng mã nguồn**: Tiết kiệm thời gian lập trình ban đầu nhưng dễ tạo ra mức độ **Coupling** nguy hiểm. Chia sẻ thư viện dùng chung rất hiệu quả cho các tiện ích hạ tầng ổn định (logging, metrics), nhưng trở thành cái bẫy nếu áp dụng cho domain logic có tần suất thay đổi cao giữa các phòng ban.
 
 > [!IMPORTANT]
-> Mục tiêu thực tế của kiến trúc sư không phải là tìm kiếm thiết kế hoàn hảo, mà là xác định phương án **Least Worst Architecture**—giải pháp dung hòa tối ưu nhất giữa các ràng buộc kỹ thuật, ngân sách và thời hạn bàn giao.
+> Mục tiêu thực tế của kiến trúc sư không phải là tìm kiếm thiết kế hoàn hảo, mà là xác định phương án **Least Worst Architecture** (giải pháp dung hòa tối ưu nhất giữa các ràng buộc kỹ thuật, ngân sách và thời hạn bàn giao).
 
 ---
 
@@ -52,6 +52,13 @@ Trong đời sống thực tế cũng như kỹ nghệ phần mềm, mọi quy�
 
 - **Không có kết quả nào là đúng hoặc sai**: Tranh cãi xem **Monolith** là sai hay **Microservices** mới là đúng hoàn toàn không mang lại giá trị kỹ thuật. Trong kiến trúc, không có quyết định nào là đúng hoặc sai tuyệt đối; một giải pháp chỉ có thể được xem là phù hợp hay không phù hợp với từng bài toán cụ thể.
 - **Tư duy dải quang phổ**: Mọi giải pháp kiến trúc đều phân bổ trên một dải quang phổ giữa hai thái cực đối nghịch. Lựa chọn hợp lý không phải là cố gắng tìm kiếm một phương án "đúng" duy nhất, mà là xác định điểm cân bằng **Sweet Spot** tương thích nhất với quy mô đội ngũ, khối lượng tải và nguồn lực tại thời điểm hiện tại.
+
+---
+
+## Liên quan
+
+*   [Architectural Characteristics Trong Kiến Trúc Phần Mềm](../02_architectural_characteristics/01_introduction.md) — First Law về **Trade-off** là nền tảng để hiểu vì sao các đặc tính kiến trúc không thể đồng thời đạt cực đại và luôn phải được ưu tiên theo bối cảnh.
+*   [Trade-off và Quản trị Kiến trúc](../02_architectural_characteristics/05_tradeoffs_and_governance.md) — cùng nguyên lý **Least Worst Architecture**: First Law đặt ra tư duy đánh đổi, bài kia triển khai nó thành bảng xung đột đặc tính và cơ chế quản trị tự động.
 
 ---
 

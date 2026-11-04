@@ -81,6 +81,8 @@ Ba thước đo này bổ trợ cho nhau thay vì thay thế nhau. **Cohesion** 
 ## Liên quan
 
 *   [Bối cảnh Trong Kiến Trúc Phần Mềm](../00_introduction/01_architectural_context.md) — cùng nguyên lý **Trade-off theo bối cảnh**: Modularity chỉ là phương tiện, và việc chọn mức độ mô-đun hóa phải xuất phát từ ràng buộc thực tế của hệ thống chứ không từ một công thức cố định.
+*   [Architectural Characteristics Trong Kiến Trúc Phần Mềm](../02_architectural_characteristics/01_introduction.md) — **Modularity** là một **Structural Characteristic** trong khung phân loại đặc tính kiến trúc, nên hai bài chia sẻ cùng trục **ranh giới cấu trúc và khả năng tiến hóa của hệ thống**.
+*   [Component Trong Kiến Trúc Phần Mềm](../03_components/01_introduction.md) — cùng trục **ranh giới cấu trúc**: Modularity gom mã nguồn thành mô-đun logic, còn Component nâng ranh giới đó lên thành đơn vị triển khai được.
 
 ---
 [← Back to README](README.md)

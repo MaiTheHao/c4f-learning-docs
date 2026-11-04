@@ -22,6 +22,9 @@ Phân nhánh tài liệu này tổng hợp các nguyên lý nền tảng, quy lu
 
 1. **[00. Introduction](00_introduction/README.md)** - Bối cảnh kinh tế kỹ thuật, 3 quy luật Trade-off bất biến và 8 kỳ vọng năng lực đối với kiến trúc sư.
 2. **[01. Modularity](01_modularity/README.md)** - Bản chất mô-đun hóa, ranh giới độ mịn (Granularity) và ba trụ cột định lượng: Cohesion, Coupling, Connascence.
+3. **[02. Architectural Characteristics](02_architectural_characteristics/README.md)** - Đặc tính kiến trúc, phân loại Operational/Structural/Cross-Cutting, phạm vi Architectural Quantum và quản trị bằng Trade-off cùng Fitness Functions.
+4. **[03. Components](03_components/README.md)** - Định nghĩa component, tư duy ranh giới theo trục thay đổi, các nguyên tắc SDP/SAP/ADP, lợi ích cô lập thay đổi và những thách thức về độ mịn, phụ thuộc vòng, pipeline.
+5. **[04. Architecture Styles](04_architecture_styles/README.md)** - Chín phong cách kiến trúc từ Layered, Modular Monolith đến Microservices, phân loại theo Monolithic/Distributed và Technical/Domain, kèm ma trận đối chiếu và nguyên tắc lựa chọn.
 
 ---
 
@@ -29,9 +32,9 @@ Phân nhánh tài liệu này tổng hợp các nguyên lý nền tảng, quy lu
 
 Toàn bộ nội dung trong phân nhánh này được tổng hợp, đối chiếu và chuẩn hóa từ các tài liệu sách kỹ thuật chuẩn mực:
 
-| Sách Tham khảo | Tác giả |
-| :--- | :--- |
-| **Fundamentals of Software Architecture (2nd Edition)** | Mark Richards & Neal Ford |
+| Sách Tham khảo                                                               | Tác giả                      |
+| :--------------------------------------------------------------------------- | :--------------------------- |
+| **Fundamentals of Software Architecture (2nd Edition)**                      | Mark Richards & Neal Ford    |
 | **Clean Architecture: A Craftsman's Guide to Software Structure and Design** | Robert C. Martin (Uncle Bob) |
 
 ---
