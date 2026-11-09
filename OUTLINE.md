@@ -29,6 +29,13 @@ Các tài liệu ghi chú nhanh và chủ đề đang nghiên cứu:
 - [NGINX](temporary/nginx/) — Web Server & Reverse Proxy.
 - [Version Control System](temporary/version_control_system/) — Hệ thống quản lý phiên bản với Git & GitHub.
 
+## 3. Phân Nhánh Interesting (`/interesting`)
+
+Các tài liệu thú vị mở rộng góc nhìn, vượt ra ngoài kiến thức kỹ thuật trực tiếp:
+
+- [Interesting Docs](interesting/README.md) — Historical Breakthroughs, Paradoxes & Thought Experiments, Mind-Bending Concepts, Engineering Curiosities, Unconventional Perspectives.
+  - [Bài toán C10K & Bước ngoặt I/O Multiplexing](interesting/historical_breakthroughs/c10k_problem.md)
+
 ---
 
 [← Quay lại README](README.md)

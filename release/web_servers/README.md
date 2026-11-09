@@ -10,7 +10,7 @@ Kho tài liệu tập hợp kiến thức về các **Web Server** hiệu năng 
 
 ## NGINX
 
-**NGINX** là web server mã nguồn mở với kiến trúc **Event-Driven Non-blocking** và mô hình **Master-Worker**, được thiết kế để giải quyết bài toán C10K (hàng chục nghìn kết nối đồng thời) với lượng tài nguyên tối thiểu. Tài liệu này đi từ lịch sử ra đời và nền tảng kỹ thuật (`epoll`, `kqueue`, I/O Multiplexing) đến giải phẫu kiến trúc bên trong: Worker Process, Event Loop, Thread Pools, Thundering Herd prevention và cơ chế Zero-Downtime Reload.
+**NGINX** là web server mã nguồn mở với kiến trúc **Event-Driven Non-blocking** và mô hình **Master-Worker**, được thiết kế để giải quyết bài toán C10K (hàng chục nghìn kết nối đồng thời) với lượng tài nguyên tối thiểu. Nền tảng I/O nền (câu chuyện C10K và I/O Multiplexing) sống ở nhóm tài liệu Interesting, còn tài liệu này đi vào giải phẫu kiến trúc bên trong NGINX: Worker Process, Event Loop, Thread Pools, Thundering Herd prevention và cơ chế Zero-Downtime Reload.
 
 [Xem chi tiết NGINX](./nginx/README.md)
 

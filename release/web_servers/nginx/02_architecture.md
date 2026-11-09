@@ -20,25 +20,7 @@ Chương này đi sâu vào kiến trúc tiến trình Master-Worker của NGINX
 
 NGINX không sử dụng mô hình đa luồng (Multi-threaded) truyền thống mà áp dụng kiến trúc **Master-Worker dựa trên tiến trình (Process-based Multi-Worker Architecture)**. Trong mô hình này, có duy nhất 1 tiến trình Master và nhiều tiến trình xử lý công việc (**Worker Processes**), kết hợp với các tiến trình phụ trợ quản lý bộ đệm (**Cache Loader** và **Cache Manager**).
 
-```mermaid
-graph TD
-    accTitle: "Mô hình Tiến trình Master-Worker NGINX"
-    accDescr: "Sơ đồ thể hiện cấu trúc phân cấp các tiến trình trong NGINX từ Kernel đến Master, Worker và Cache Manager."
-
-    Kernel["OS Kernel (epoll / kqueue Event Loop)"]
-    Master["Master Process (User: root)"]
-
-    Master -->|"Khởi tạo & Quản lý"| Worker1["Worker Process 1 (User: nginx)"]
-    Master -->|"Khởi tạo & Quản lý"| Worker2["Worker Process 2 (User: nginx)"]
-    Master -->|"Khởi tạo & Quản lý"| WorkerN["Worker Process N (User: nginx)"]
-
-    Master -->|"fork"| CacheLoader["Cache Loader Process"]
-    Master -->|"fork"| CacheManager["Cache Manager Process"]
-
-    Worker1 <--->|"epoll / kqueue"| Kernel
-    Worker2 <--->|"epoll / kqueue"| Kernel
-    WorkerN <--->|"epoll / kqueue"| Kernel
-```
+![alt text](image.png)
 
 Master Process giữ đặc quyền cao nhất để khởi tạo và quản lý vòng đời các Worker Process, trong khi các Worker Process trực tiếp giao tiếp với OS Kernel để xử lý lưu lượng mạng qua vòng lặp sự kiện.
 
@@ -72,6 +54,7 @@ Các **Worker Process** chạy dưới tài khoản không có quyền đặc qu
 - **Số lượng Worker & CPU Affinity**: Thường cấu hình `worker_processes auto;` để NGINX tự động tạo số Worker bằng đúng số logical CPU. Lưu ý rằng `worker_processes auto;` **không tự động ghim Worker vào CPU core**. Để tránh việc Linux Scheduler chuyển đổi (migrate) Worker giữa các core gây ra cache miss, người quản trị cần cấu hình tường minh chỉ thị `worker_cpu_affinity`.
 
 ### 2.3.1 Công thức tính Max Clients & Giới hạn File Descriptors
+<!-- TODO: Thừa thải cần xóa đi trong đợt sửa đổi sau :_) -->
 
 Công thức tính tổng số kết nối đồng thời tối đa lý thuyết (Theoretical Upper Bound):
 
@@ -88,6 +71,7 @@ Max Clients ≈ (worker_processes * worker_connections) / 2
 - **Giới hạn File Descriptors (`RLIMIT_NOFILE`)**: Đây là giới hạn lý thuyết tối đa. Thực tế, tổng kết nối bị khống chế bởi số File Descriptors cho phép của hệ điều hành (`ulimit -n`) và chỉ thị `worker_rlimit_nofile`. Mỗi kết nối socket, tệp tin đĩa, unix socket, upstream connection đều tiêu tốn File Descriptor.
 
 ### 2.3.2 Chống thảm họa tranh chấp kết nối (Thundering Herd & `SO_REUSEPORT`)
+<!-- TODO: Thừa thải cần xóa đi trong đợt sửa đổi sau :_) -->
 
 Khi có một kết nối mới đến socket lắng nghe, nếu tất cả các Worker Process cùng bị hệ điều hành đánh thức để tranh chấp tiếp nhận kết nối đó (trong khi chỉ 1 Worker xử lý thành công), hiện tượng **Thundering Herd** xuất hiện gây lãng phí tài nguyên CPU.
 
@@ -139,6 +123,7 @@ Worker Process vận hành như một Máy trạng thái (State Machine): khi nh
 ---
 
 ## 2.5 Cơ chế I/O Multiplexing: epoll vs kqueue
+<!-- TODO: Thừa thải cần xóa đi trong đợt sửa đổi sau :_) -->
 
 Trái tim tạo nên khả năng xử lý hàng trăm nghìn kết nối đồng thời của NGINX là cơ chế **I/O Multiplexing** của nhân hệ điều hành.
 
@@ -153,6 +138,7 @@ Trái tim tạo nên khả năng xử lý hàng trăm nghìn kết nối đồng
 ---
 
 ## 2.6 Cơ chế Hot Reload & Binary Upgrade (Zero-Downtime)
+<!-- TODO: Thừa thải cần xóa đi trong đợt sửa đổi sau :_) chỉ cần nói rằng có cơ chế hot reload, mô tả flow tổng quan không cần đặc tả kỹ thuật chi tiết -->
 
 NGINX được thiết kế để hoạt động liên tục 24/7/365. Mọi thao tác thay đổi cấu hình hoặc nâng cấp phiên bản phần mềm đều được thực hiện dưới cơ chế Zero-downtime (không gián đoạn dịch vụ).
 
@@ -178,6 +164,7 @@ graph TD
 | **Bước 4–5** | Gửi tín hiệu ngưng nhận kết nối mới cho Worker cũ | Worker cũ phục vụ nốt kết nối hiện tại rồi tự dừng (Zero downtime) |
 
 ### 2. Nâng cấp Phần mềm Không gián đoạn (Hot Binary Upgrade)
+<!-- TODO: Thừa thải cần xóa đi trong đợt sửa đổi sau :_) -->
 Khi nâng cấp nhị phân NGINX (ví dụ từ v1.24 lên v1.26) thông qua tín hiệu `SIGUSR2`:
 1. Master Process cũ khởi chạy file nhị phân NGINX mới, tạo ra một Master Process thứ hai chạy song song.
 2. Master Process mới khởi tạo các Worker Process mới để tiếp nhận các kết nối mới.

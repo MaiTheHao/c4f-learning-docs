@@ -1,6 +1,6 @@
 # Release Docs - Tài liệu Đã Rà Soát
 
-Phân nhánh `/release` chứa các tài liệu đã được bản thân tôi trực tiếp duyệt và tinh chỉnh. Dù độ chính xác không phải là tuyệt đối nhưng mức độ uy tín và tin cậy sẽ cao hơn phân nhánh `temporary`; hãy luôn lưu ý đọc và chọn lọc khi tham khảo.
+Phân nhánh `/release` chứa các tài liệu đã được bản thân tôi trực tiếp duyệt và tinh chỉnh. Dù độ chính xác không phải là tuyệt đối nhưng mức độ uy tín và tin cậy sẽ cao nhất trong ba phân vùng (`release` cao hơn `temporary` và `interesting`); hãy luôn lưu ý đọc và chọn lọc khi tham khảo.
 
 ---
 

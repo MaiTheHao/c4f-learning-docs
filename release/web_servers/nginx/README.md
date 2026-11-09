@@ -1,6 +1,6 @@
 # NGINX
 
-**NGINX** là web server mã nguồn mở hiệu năng cao, được Igor Sysoev thiết kế từ năm 2002 để giải quyết bài toán **C10K** — xử lý đồng thời hàng chục nghìn kết nối với mức tiêu thụ tài nguyên tối thiểu. Kiến trúc **Event-Driven**, **Non-blocking I/O** và mô hình **Master-Worker** là ba trụ cột khiến NGINX trở thành xương sống của hạ tầng Internet hiện đại, từ Web Server và Reverse Proxy đến Load Balancer và API Gateway.
+**NGINX** là web server mã nguồn mở hiệu năng cao, được Igor Sysoev thiết kế từ năm 2002 với kiến trúc **Event-Driven**, **Non-blocking I/O** và mô hình **Master-Worker** giúp xử lý đồng thời hàng chục nghìn kết nối với mức tiêu thụ tài nguyên tối thiểu. NGINX trở thành xương sống của hạ tầng Internet hiện đại, từ Web Server và Reverse Proxy đến Load Balancer và API Gateway.
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 
 ## Chương 1. Tổng quan & Lịch sử ra đời
 
-Chương này xây dựng nền tảng nhận thức về NGINX: từ lịch sử ra đời, vai trò đa năng trong hệ thống, đến bài toán C10K đã thúc đẩy sự ra đời của kiến trúc hướng sự kiện. Trọng tâm là cơ chế **I/O Multiplexing** (`epoll`, `kqueue`, `IOCP`) — bước ngoặt kỹ thuật định hình lại toàn bộ hệ sinh thái phần mềm hiện đại, và lý do tại sao mô hình Thread/Process-per-connection của các web server thế hệ cũ tất yếu sụp đổ dưới quy mô kết nối lớn.
+Chương này xây dựng nền tảng nhận thức về NGINX: lịch sử ra đời, vai trò đa năng trong hệ thống và mục tiêu thiết kế cốt lõi. Câu chuyện lịch sử về bài toán C10K và cơ chế **I/O Multiplexing** Bài toán C10K](../../../interesting/historical_breakthroughs/c10k_problem.md).
 
 [Xem chi tiết Chương 1](./01_introduction.md)
 
