@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Design Tokens
+   CSS variables: layout metrics, transitions, light & dark palettes.
+   ========================================================================== */
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  
+  /* Layout */
+  --header-height: 56px;
+  --sidebar-width: 320px;
+  --toc-width: 250px;
+  --max-content-width: 980px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-tertiary: #eaeef2;
+  --bg-code: #f6f8fa;
+  --border-color: #d0d7de;
+  --border-subtle: #e1e4e8;
+  
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --text-muted: #8c959f;
+  
+  --accent-primary: #0969da;
+  --accent-hover: #0860ca;
+  --accent-subtle: #ddf4ff;
+  --accent-text: #0969da;
+
+  --badge-release: #1a7f37;
+  --badge-release-bg: #dafbe1;
+  --badge-temp: #9a6700;
+  --badge-temp-bg: #fff8c5;
+  --badge-inter: #8250df;
+  --badge-inter-bg: #fbefff;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* Dark Theme Variables (Default) */
+[data-theme="dark"] {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-code: #161b22;
+  --border-color: #30363d;
+  --border-subtle: #21262d;
+  
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  
+  --accent-primary: #2f81f7;
+  --accent-hover: #58a6ff;
+  --accent-subtle: rgba(56, 139, 253, 0.15);
+  --accent-text: #58a6ff;
+
+  --badge-release: #3fb950;
+  --badge-release-bg: rgba(46, 160, 67, 0.15);
+  --badge-temp: #d29922;
+  --badge-temp-bg: rgba(210, 153, 34, 0.15);
+  --badge-inter: #a371f7;
+  --badge-inter-bg: rgba(163, 113, 247, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+}

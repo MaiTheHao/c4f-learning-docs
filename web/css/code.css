@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Code Blocks
+   Prism code blocks and copy-to-clipboard button.
+   ========================================================================== */
+
+/* Code Blocks & Copy Button */
+.code-block-wrapper {
+  position: relative;
+  margin: 16px 0;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast);
+  z-index: 5;
+}
+
+.code-block-wrapper:hover .copy-code-btn {
+  opacity: 1;
+}
+
+.copy-code-btn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.markdown-body pre {
+  background-color: var(--bg-code) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  overflow-x: auto;
+}

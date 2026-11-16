@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Mermaid Diagrams
+   Diagram wrapper container.
+   ========================================================================== */
+
+/* Mermaid Diagram Container */
+.mermaid-wrapper {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  min-height: 80px;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}

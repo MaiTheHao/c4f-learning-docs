@@ -10,11 +10,19 @@
       "dest": "/web/lib/$1"
     },
     {
-      "src": "^/(index\\.css|index\\.js|manifest\\.js|manifest\\.json)$",
+      "src": "^/(css|js)/(.*)$",
+      "dest": "/web/$1/$2"
+    },
+    {
+      "src": "^/(manifest\\.js|manifest\\.json)$",
       "dest": "/web/$1"
     },
     {
       "handle": "filesystem"
+    },
+    {
+      "src": "^/(release|temporary|interesting)/.*\\.md$",
+      "status": 404
     },
     {
       "src": "^/(.*)$",

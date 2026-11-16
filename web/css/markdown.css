@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Markdown Body
+   GitHub markdown overrides, images, tables.
+   ========================================================================== */
+
+/* Markdown Container Overrides */
+.markdown-body {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 15px;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3,
+.markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+  margin-top: 1.8em;
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.markdown-body a {
+  color: var(--accent-text) !important;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body p, .markdown-body ul, .markdown-body ol {
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.markdown-body code:not(pre code) {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 88%;
+}
+
+/* Markdown Images */
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  margin: 16px 0;
+  cursor: zoom-in;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.markdown-body img:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Tables */
+.markdown-body table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border: 1px solid var(--border-color) !important;
+  padding: 8px 12px !important;
+}
+
+.markdown-body table th {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: var(--bg-secondary) !important;
+}
