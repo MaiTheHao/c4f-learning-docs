@@ -1,0 +1,1005 @@
+// Auto-generated manifest of markdown documents
+window.DOCS_MANIFEST = [
+  {
+    "path": "release/README.md",
+    "title": "Release Docs - Tài liệu Đã Rà Soát",
+    "category": "release",
+    "folder": "release"
+  },
+  {
+    "path": "release/computer_networking/README.md",
+    "title": "Mạng máy tính (Computer Networking)",
+    "category": "release",
+    "folder": "release/computer_networking"
+  },
+  {
+    "path": "release/computer_networking/00_osi_model/osi_7_layers.md",
+    "title": "Mô hình Tham chiếu OSI (Open Systems Interconnection)",
+    "category": "release",
+    "folder": "release/computer_networking/00_osi_model"
+  },
+  {
+    "path": "release/computer_networking/00_osi_model/tcp_ip_vs_osi.md",
+    "title": "Bộ Giao thức TCP/IP và So sánh Đối chiếu với OSI",
+    "category": "release",
+    "folder": "release/computer_networking/00_osi_model"
+  },
+  {
+    "path": "release/computer_networking/01_internet_protocol/ip_packet_and_icmp.md",
+    "title": "Cấu trúc Gói tin IP và Giao thức ICMP",
+    "category": "release",
+    "folder": "release/computer_networking/01_internet_protocol"
+  },
+  {
+    "path": "release/computer_networking/01_internet_protocol/ipv4_ipv6.md",
+    "title": "IPv4 và IPv6: Tại Sao Phải Chuyển Đổi?",
+    "category": "release",
+    "folder": "release/computer_networking/01_internet_protocol"
+  },
+  {
+    "path": "release/computer_networking/01_internet_protocol/the_ip_building_blocks.md",
+    "title": "IP Address, Subnet, và Default Gateway",
+    "category": "release",
+    "folder": "release/computer_networking/01_internet_protocol"
+  },
+  {
+    "path": "release/computer_networking/02_routing/arp.md",
+    "title": "Tổng quan Giao thức ARP (Address Resolution Protocol)",
+    "category": "release",
+    "folder": "release/computer_networking/02_routing"
+  },
+  {
+    "path": "release/computer_networking/02_routing/nat.md",
+    "title": "Hướng dẫn toàn diện về NAT (Network Address Translation)",
+    "category": "release",
+    "folder": "release/computer_networking/02_routing"
+  },
+  {
+    "path": "release/computer_networking/03_udp/pros_cons.md",
+    "title": "Ưu và Nhược điểm của UDP",
+    "category": "release",
+    "folder": "release/computer_networking/03_udp"
+  },
+  {
+    "path": "release/computer_networking/03_udp/user_datagram_structure.md",
+    "title": "Cấu trúc của UDP Datagram",
+    "category": "release",
+    "folder": "release/computer_networking/03_udp"
+  },
+  {
+    "path": "release/computer_networking/03_udp/what_is_udp.md",
+    "title": "User Datagram Protocol - UDP",
+    "category": "release",
+    "folder": "release/computer_networking/03_udp"
+  },
+  {
+    "path": "release/computer_networking/04_tcp/pros_cons.md",
+    "title": "Ưu và Nhược điểm của TCP",
+    "category": "release",
+    "folder": "release/computer_networking/04_tcp"
+  },
+  {
+    "path": "release/computer_networking/04_tcp/tcp_segment.md",
+    "title": "Cấu trúc TCP Segment và Phân tích TCP Header",
+    "category": "release",
+    "folder": "release/computer_networking/04_tcp"
+  },
+  {
+    "path": "release/computer_networking/04_tcp/what_is_tcp.md",
+    "title": "Giới thiệu về TCP (Transmission Control Protocol)",
+    "category": "release",
+    "folder": "release/computer_networking/04_tcp"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/certificates.md",
+    "title": "Digital Certificates - Chứng thư số",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/dns.md",
+    "title": "Giao thức DNS (Domain Name System)",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/https.md",
+    "title": "HTTPS: Giao thức truyền tải siêu văn bản an toàn",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/introduce.md",
+    "title": "Tổng quan về DNS, TLS, và HTTPS",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/ssh.md",
+    "title": "Giao thức SSH (Secure Shell)",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/06_overview_of_popular_networking_protocols/tls.md",
+    "title": "Giao thức TLS (Transport Layer Security)",
+    "category": "release",
+    "folder": "release/computer_networking/06_overview_of_popular_networking_protocols"
+  },
+  {
+    "path": "release/computer_networking/07_others/delayed_acknowledgment_effect_on_performance.md",
+    "title": "Thuật toán Delayed Acknowledgment (ACK Trì hoãn) và Hiệu suất",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/computer_networking/07_others/load_balancing_at_l4_vs_l7.md",
+    "title": "Cân bằng tải Lớp 4 (L4) vs. Lớp 7 (L7): Cuộc chiến giữa Tốc độ và Trí thông minh",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/computer_networking/07_others/mss_mtu_path_mtu.md",
+    "title": "MSS, MTU và Path MTU Discovery: Gói tin có thể lớn đến mức nào?",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/computer_networking/07_others/nagles_algorithm_effect_on_performance.md",
+    "title": "Thuật toán Nagle và Ảnh hưởng \"Chết người\" đến Hiệu suất",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/computer_networking/07_others/the_importance_of_proxy_and_reverse_proxies.md",
+    "title": "Proxy vs. Reverse Proxy: Giải mã \"Người gác cổng\" Mạng",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/computer_networking/07_others/what_is_a_firewall.md",
+    "title": "Tường lửa (Firewall)",
+    "category": "release",
+    "folder": "release/computer_networking/07_others"
+  },
+  {
+    "path": "release/design_patterns/README.md",
+    "title": "Mục Lục Tài Liệu Design Patterns & OOP",
+    "category": "release",
+    "folder": "release/design_patterns"
+  },
+  {
+    "path": "release/design_patterns/ioc.md",
+    "title": "IoC, DI và DIP: Từ triết lý Inversion of Control đến IoC Container hiện đại",
+    "category": "release",
+    "folder": "release/design_patterns"
+  },
+  {
+    "path": "release/design_patterns/behavioral/README.md",
+    "title": "Behavioral Patterns (Nhóm mẫu hành vi)",
+    "category": "release",
+    "folder": "release/design_patterns/behavioral"
+  },
+  {
+    "path": "release/design_patterns/behavioral/observer.md",
+    "title": "Observer Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/behavioral"
+  },
+  {
+    "path": "release/design_patterns/behavioral/strategy.md",
+    "title": "Strategy Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/behavioral"
+  },
+  {
+    "path": "release/design_patterns/creational/README.md",
+    "title": "Creational Patterns (Nhóm mẫu khởi tạo)",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/creational/abstract_factory.md",
+    "title": "Abstract Factory Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/creational/builder.md",
+    "title": "Builder Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/creational/factory_method.md",
+    "title": "Factory Method Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/creational/prototype.md",
+    "title": "Prototype Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/creational/singleton.md",
+    "title": "Singleton Pattern",
+    "category": "release",
+    "folder": "release/design_patterns/creational"
+  },
+  {
+    "path": "release/design_patterns/oop/README.md",
+    "title": "Lập Trình Hướng Đối Tượng (OOP)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/oop/abstraction.md",
+    "title": "Trừu Tượng Hóa & Interface (Abstraction)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/oop/class_relationships.md",
+    "title": "Mối Quan Hệ Giữa Các Lớp (Class Relationships)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/oop/encapsulation.md",
+    "title": "Đóng Gói (Encapsulation)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/oop/inheritance.md",
+    "title": "Kế Thừa (Inheritance)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/oop/polymorphism.md",
+    "title": "Đa Hình (Polymorphism)",
+    "category": "release",
+    "folder": "release/design_patterns/oop"
+  },
+  {
+    "path": "release/design_patterns/solid/README.md",
+    "title": "Design Pattern & Nguyên tắc SOLID",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/design_patterns/solid/dependency_inversion_principle.md",
+    "title": "Dependency Inversion Principle (DIP)",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/design_patterns/solid/interface_segregation_principle.md",
+    "title": "Interface Segregation Principle (ISP)",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/design_patterns/solid/liskov_substitution_principle.md",
+    "title": "Liskov Substitution Principle (LSP)",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/design_patterns/solid/open_closed_principle.md",
+    "title": "Open Closed Principle (OCP)",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/design_patterns/solid/single_responsibility_principle.md",
+    "title": "Single Responsibility Principle (SRP)",
+    "category": "release",
+    "folder": "release/design_patterns/solid"
+  },
+  {
+    "path": "release/programming_frameworks/README.md",
+    "title": "Programming Frameworks",
+    "category": "release",
+    "folder": "release/programming_frameworks"
+  },
+  {
+    "path": "release/programming_frameworks/spring/README.md",
+    "title": "Spring Framework",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring"
+  },
+  {
+    "path": "release/programming_frameworks/spring/aop/README.md",
+    "title": "AOP và Spring AOP",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/aop"
+  },
+  {
+    "path": "release/programming_frameworks/spring/aop/01_fundamentals/README.md",
+    "title": "Fundamentals",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/aop/01_fundamentals"
+  },
+  {
+    "path": "release/programming_frameworks/spring/aop/01_fundamentals/aop_overview.md",
+    "title": "Tổng quan AOP: động cơ, khái niệm và Trade-off",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/aop/01_fundamentals"
+  },
+  {
+    "path": "release/programming_frameworks/spring/aop/02_spring_aop/README.md",
+    "title": "Spring AOP",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/aop/02_spring_aop"
+  },
+  {
+    "path": "release/programming_frameworks/spring/aop/02_spring_aop/aspect_model.md",
+    "title": "Mô hình Aspect trong Spring AOP",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/aop/02_spring_aop"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spel/README.md",
+    "title": "Spring Expression Language (SpEL)",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spel"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spel/spel.md",
+    "title": "Spring Expression Language (SpEL)",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spel"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/README.md",
+    "title": "Spring Proxy Guide",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations/README.md",
+    "title": "Nền tảng",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations/call_flow_and_self_invocation.md",
+    "title": "Luồng lời gọi và self-invocation",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations/knowledge_map.md",
+    "title": "Lộ trình và bản đồ kiến thức",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations/proxy_model.md",
+    "title": "Mô hình nền tảng: proxy là gì và các actor",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/01_foundations"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques/README.md",
+    "title": "Kỹ thuật",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques/constraints_and_alternatives.md",
+    "title": "Giới hạn proxy và khi nào cần cơ chế khác",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques"
+  },
+  {
+    "path": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques/jdk_proxy_vs_cglib.md",
+    "title": "JDK dynamic proxy và CGLIB",
+    "category": "release",
+    "folder": "release/programming_frameworks/spring/spring_proxy_guide/02_techniques"
+  },
+  {
+    "path": "release/programming_languages/java/README.md",
+    "title": "Java",
+    "category": "release",
+    "folder": "release/programming_languages/java"
+  },
+  {
+    "path": "release/programming_languages/java/generic_type.md",
+    "title": "Java Generics",
+    "category": "release",
+    "folder": "release/programming_languages/java"
+  },
+  {
+    "path": "release/programming_languages/javascript/prototype_vs_closure.md",
+    "title": "JavaScript: Prototype vs Closure",
+    "category": "release",
+    "folder": "release/programming_languages/javascript"
+  },
+  {
+    "path": "release/security/cryptography/README.md",
+    "title": "Chuyên đề Cryptography",
+    "category": "release",
+    "folder": "release/security/cryptography"
+  },
+  {
+    "path": "release/security/cryptography/01_foundations/README.md",
+    "title": "Nền tảng mã hóa",
+    "category": "release",
+    "folder": "release/security/cryptography/01_foundations"
+  },
+  {
+    "path": "release/security/cryptography/01_foundations/cryptographic_sizes.md",
+    "title": "Các con số trong mật mã: Kích thước khóa, khối, đầu ra và Mức an toàn",
+    "category": "release",
+    "folder": "release/security/cryptography/01_foundations"
+  },
+  {
+    "path": "release/security/cryptography/01_foundations/encryption_overview.md",
+    "title": "Encryption: Tổng quan và Cách chọn họ thuật toán",
+    "category": "release",
+    "folder": "release/security/cryptography/01_foundations"
+  },
+  {
+    "path": "release/security/cryptography/01_foundations/hybrid_encryption.md",
+    "title": "Mã hóa lai: Vì sao hệ thống dùng cả hai họ thuật toán",
+    "category": "release",
+    "folder": "release/security/cryptography/01_foundations"
+  },
+  {
+    "path": "release/security/cryptography/02_symmetric/README.md",
+    "title": "Thuật toán đối xứng",
+    "category": "release",
+    "folder": "release/security/cryptography/02_symmetric"
+  },
+  {
+    "path": "release/security/cryptography/02_symmetric/aes.md",
+    "title": "AES: Tính chất, Mode và các Vấn đề Triển khai",
+    "category": "release",
+    "folder": "release/security/cryptography/02_symmetric"
+  },
+  {
+    "path": "release/security/cryptography/02_symmetric/aes_modes_aead.md",
+    "title": "Mode of Operation và AEAD cho AES: Đánh đổi và Lỗi Triển khai",
+    "category": "release",
+    "folder": "release/security/cryptography/02_symmetric"
+  },
+  {
+    "path": "release/security/cryptography/03_asymmetric/README.md",
+    "title": "Thuật toán bất đối xứng",
+    "category": "release",
+    "folder": "release/security/cryptography/03_asymmetric"
+  },
+  {
+    "path": "release/security/cryptography/03_asymmetric/rsa.md",
+    "title": "RSA: Tính chất, Giới hạn và các Vấn đề Triển khai",
+    "category": "release",
+    "folder": "release/security/cryptography/03_asymmetric"
+  },
+  {
+    "path": "release/security/cryptography/04_protocols/README.md",
+    "title": "Giao thức",
+    "category": "release",
+    "folder": "release/security/cryptography/04_protocols"
+  },
+  {
+    "path": "release/security/cryptography/04_protocols/post_quantum_transition.md",
+    "title": "Mật mã kháng lượng tử: Mối đe dọa và Lộ trình chuyển đổi",
+    "category": "release",
+    "folder": "release/security/cryptography/04_protocols"
+  },
+  {
+    "path": "release/security/cryptography/04_protocols/tls_handshake.md",
+    "title": "TLS: Bắt tay, Forward Secrecy và Vai trò của Chứng chỉ",
+    "category": "release",
+    "folder": "release/security/cryptography/04_protocols"
+  },
+  {
+    "path": "release/security/cryptography/05_encrypted_query/README.md",
+    "title": "Truy vấn trên dữ liệu mã hóa",
+    "category": "release",
+    "folder": "release/security/cryptography/05_encrypted_query"
+  },
+  {
+    "path": "release/security/cryptography/05_encrypted_query/cryptdb_cipher_levels.md",
+    "title": "Các Cipher Level trong CryptDB: RND, DET, OPE, HOM, SEARCH và JOIN",
+    "category": "release",
+    "folder": "release/security/cryptography/05_encrypted_query"
+  },
+  {
+    "path": "release/security/cryptography/05_encrypted_query/cryptdb_onion_encryption.md",
+    "title": "Onion Encryption trong CryptDB: Bóc lớp theo từng truy vấn",
+    "category": "release",
+    "folder": "release/security/cryptography/05_encrypted_query"
+  },
+  {
+    "path": "release/security/cryptography/05_encrypted_query/encrypted_query_leakage_and_alternatives.md",
+    "title": "Rò rỉ, Tấn công và Hướng thay thế cho CryptDB",
+    "category": "release",
+    "folder": "release/security/cryptography/05_encrypted_query"
+  },
+  {
+    "path": "release/security/cryptography/06_emerging_directions/README.md",
+    "title": "Các hướng đang nghiên cứu",
+    "category": "release",
+    "folder": "release/security/cryptography/06_emerging_directions"
+  },
+  {
+    "path": "release/security/cryptography/06_emerging_directions/emerging_directions.md",
+    "title": "Các hướng khác trong mã hóa: FHE, BYOK/BYOE và Honey Encryption",
+    "category": "release",
+    "folder": "release/security/cryptography/06_emerging_directions"
+  },
+  {
+    "path": "release/security/jwt/README.md",
+    "title": "Chuyên đề: JSON Web Token (JWT)",
+    "category": "release",
+    "folder": "release/security/jwt"
+  },
+  {
+    "path": "release/security/jwt/attacks_and_defenses.md",
+    "title": "Tấn công và Phòng thủ trong JWT",
+    "category": "release",
+    "folder": "release/security/jwt"
+  },
+  {
+    "path": "release/security/jwt/indepth.md",
+    "title": "Phân tích Chuyên sâu về JWT",
+    "category": "release",
+    "folder": "release/security/jwt"
+  },
+  {
+    "path": "release/security/jwt/introduce.md",
+    "title": "Tìm hiểu về JSON Web Token (JWT)",
+    "category": "release",
+    "folder": "release/security/jwt"
+  },
+  {
+    "path": "release/security/oauth/README.md",
+    "title": "Chuyên đề: OAuth 2.0 & OpenID Connect (OIDC)",
+    "category": "release",
+    "folder": "release/security/oauth"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/app_identity.md",
+    "title": "Định danh Ứng dụng (Application Identity) trong OAuth 2.0",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/application_types.md",
+    "title": "Các Loại Ứng Dụng (Client Types) trong OAuth 2.0",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/front_channel_&_back_channel.md",
+    "title": "Phân biệt Kênh Truyền dữ liệu: Front Channel và Back Channel",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/oauth_clients.md",
+    "title": "Giới thiệu về Các loại OAuth Clients",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/roles_permissions.md",
+    "title": "Các Vai trò trong OAuth 2.0",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/api_security_concepts/user_consent.md",
+    "title": "Sự đồng ý của người dùng (User Consent) trong OAuth",
+    "category": "release",
+    "folder": "release/security/oauth/api_security_concepts"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_server_side_app/authorization_code_flow_for_web_application.md",
+    "title": "Luồng Mã Ủy quyền cho Web Application (Server-Side)",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_server_side_app"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_server_side_app/registering.md",
+    "title": "Quy trình Đăng ký OAuth Client",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_server_side_app"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_spa/authorization_code_flow_for_spa.md",
+    "title": "Luồng Mã Ủy quyền cho Single Page Application (SPA)",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_spa"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_spa/problem_with_browser_env.md",
+    "title": "Giới hạn Môi trường Trình duyệt (Browser Environment Constraints)",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_spa"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_spa/protecting_browser_with_backend.md",
+    "title": "Mô hình Backend-for-Frontend (BFF) bảo vệ Trình duyệt",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_spa"
+  },
+  {
+    "path": "release/security/oauth/oauth_for_spa/protecting_token_in_browser.md",
+    "title": "Các Phương pháp Bảo vệ Token trong Trình duyệt",
+    "category": "release",
+    "folder": "release/security/oauth/oauth_for_spa"
+  },
+  {
+    "path": "release/security/oauth/openidconnect/how_id_token_diff_from_access_token.md",
+    "title": "Phân biệt ID Token và Access Token",
+    "category": "release",
+    "folder": "release/security/oauth/openidconnect"
+  },
+  {
+    "path": "release/security/oauth/openidconnect/hybrid_openid_connect_flow.md",
+    "title": "Luồng Hỗn hợp trong OpenID Connect (OIDC Hybrid Flow)",
+    "category": "release",
+    "folder": "release/security/oauth/openidconnect"
+  },
+  {
+    "path": "release/security/oauth/openidconnect/obtaining_an_id_token.md",
+    "title": "Quy trình Thu nhận ID Token (Obtaining ID Token)",
+    "category": "release",
+    "folder": "release/security/oauth/openidconnect"
+  },
+  {
+    "path": "release/security/oauth/openidconnect/validating_and_using_an_id_token.md",
+    "title": "Quy trình Xác thực và Sử dụng ID Token",
+    "category": "release",
+    "folder": "release/security/oauth/openidconnect"
+  },
+  {
+    "path": "release/security/oauth/openidconnect/what_is_id_token.md",
+    "title": "ID Token là gì? Khái niệm về OpenID Connect",
+    "category": "release",
+    "folder": "release/security/oauth/openidconnect"
+  },
+  {
+    "path": "release/security/oauth/overview/oauth_vs_oidc.md",
+    "title": "OAuth vs OpenID Connect – Tổng hợp",
+    "category": "release",
+    "folder": "release/security/oauth/overview"
+  },
+  {
+    "path": "release/software_architecture/README.md",
+    "title": "Software Architecture - Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture"
+  },
+  {
+    "path": "release/software_architecture/00_introduction/01_architectural_context.md",
+    "title": "Bối Cảnh Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/00_introduction"
+  },
+  {
+    "path": "release/software_architecture/00_introduction/02_laws_and_expectations.md",
+    "title": "Quy Luật Kiến Trúc & Kỳ Vọng Năng Lực",
+    "category": "release",
+    "folder": "release/software_architecture/00_introduction"
+  },
+  {
+    "path": "release/software_architecture/00_introduction/README.md",
+    "title": "Software Architecture Fundamentals - Kiến Trúc Phần Mềm Cơ Bản",
+    "category": "release",
+    "folder": "release/software_architecture/00_introduction"
+  },
+  {
+    "path": "release/software_architecture/01_modularity/01_introduction.md",
+    "title": "Modularity Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/01_modularity"
+  },
+  {
+    "path": "release/software_architecture/01_modularity/README.md",
+    "title": "Modularity - Tính Mô-đun Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/01_modularity"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/01_introduction.md",
+    "title": "Giới thiệu Architectural Characteristics",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/02_classification.md",
+    "title": "Phân loại Đặc tính Kiến trúc",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/03_explicit_implicit_composite.md",
+    "title": "Explicit, Implicit và Composite",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/04_scope_and_quantum.md",
+    "title": "Phạm vi Áp dụng và Architectural Quantum",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/05_tradeoffs_and_governance.md",
+    "title": "Trade-off và Quản trị Kiến trúc",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/02_architectural_characteristics/README.md",
+    "title": "Architectural Characteristics - Đặc tính Kiến trúc",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics"
+  },
+  {
+    "path": "release/software_architecture/03_components/01_introduction.md",
+    "title": "Component Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/03_components"
+  },
+  {
+    "path": "release/software_architecture/03_components/02_component_based_thinking.md",
+    "title": "Lối tư duy Component",
+    "category": "release",
+    "folder": "release/software_architecture/03_components"
+  },
+  {
+    "path": "release/software_architecture/03_components/03_benefits.md",
+    "title": "Component Giải quyết Vấn đề gì",
+    "category": "release",
+    "folder": "release/software_architecture/03_components"
+  },
+  {
+    "path": "release/software_architecture/03_components/04_challenges.md",
+    "title": "Vấn đề và Thách thức khi làm việc với Component",
+    "category": "release",
+    "folder": "release/software_architecture/03_components"
+  },
+  {
+    "path": "release/software_architecture/03_components/README.md",
+    "title": "Components - Thành phần Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/03_components"
+  },
+  {
+    "path": "release/software_architecture/04_architecture_styles/01_introduction.md",
+    "title": "Architecture Styles Trong Kiến Trúc Phần Mềm",
+    "category": "release",
+    "folder": "release/software_architecture/04_architecture_styles"
+  },
+  {
+    "path": "release/software_architecture/04_architecture_styles/02_monolithic_styles.md",
+    "title": "Các Monolithic Architecture Styles",
+    "category": "release",
+    "folder": "release/software_architecture/04_architecture_styles"
+  },
+  {
+    "path": "release/software_architecture/04_architecture_styles/03_distributed_styles.md",
+    "title": "Các Distributed Architecture Styles",
+    "category": "release",
+    "folder": "release/software_architecture/04_architecture_styles"
+  },
+  {
+    "path": "release/software_architecture/04_architecture_styles/04_comparison.md",
+    "title": "Ma trận Đối chiếu Architecture Styles",
+    "category": "release",
+    "folder": "release/software_architecture/04_architecture_styles"
+  },
+  {
+    "path": "release/software_architecture/04_architecture_styles/README.md",
+    "title": "Architecture Styles - Phong cách Kiến trúc Phần mềm",
+    "category": "release",
+    "folder": "release/software_architecture/04_architecture_styles"
+  },
+  {
+    "path": "release/web_servers/README.md",
+    "title": "Web Servers",
+    "category": "release",
+    "folder": "release/web_servers"
+  },
+  {
+    "path": "release/web_servers/nginx/01_introduction.md",
+    "title": "Chương 1. Tổng quan & Lịch sử ra đời NGINX",
+    "category": "release",
+    "folder": "release/web_servers/nginx"
+  },
+  {
+    "path": "release/web_servers/nginx/02_architecture.md",
+    "title": "Chương 2. Kiến trúc & Khái niệm Cốt lõi",
+    "category": "release",
+    "folder": "release/web_servers/nginx"
+  },
+  {
+    "path": "release/web_servers/nginx/README.md",
+    "title": "NGINX",
+    "category": "release",
+    "folder": "release/web_servers/nginx"
+  },
+  {
+    "path": "temporary/README.md",
+    "title": "Temporary Docs - Tài liệu Nháp & Tổng hợp Nhanh",
+    "category": "temporary",
+    "folder": "temporary"
+  },
+  {
+    "path": "temporary/wish.md",
+    "title": "System Design & DevOps Learning Checklist",
+    "category": "temporary",
+    "folder": "temporary"
+  },
+  {
+    "path": "temporary/data_modelling/01_foundations.md",
+    "title": "Foundations of Data Modelling",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/02_workload_analysis.md",
+    "title": "Workload Analysis",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/03_relationships_and_cardinality.md",
+    "title": "Relationships and Cardinality",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/04_data_placement_and_consistency.md",
+    "title": "Data Placement and Consistency",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/05_design_patterns_overview.md",
+    "title": "Design Patterns for Data Modelling",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/06_read_optimization_patterns.md",
+    "title": "Read Optimization Patterns",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/07_time_hierarchy_and_evolution_patterns.md",
+    "title": "Time, Hierarchy and Evolution Patterns",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/08_end_to_end_modelling.md",
+    "title": "End-to-End Data Modelling Workflow",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/09_case_study_coffee_franchise.md",
+    "title": "Case Study: Coffee Shop Franchise",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/10_glossary_and_scope.md",
+    "title": "Glossary and Scope",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/data_modelling/README.md",
+    "title": "Data Modelling",
+    "category": "temporary",
+    "folder": "temporary/data_modelling"
+  },
+  {
+    "path": "temporary/database/README.md",
+    "title": "Database Internals",
+    "category": "temporary",
+    "folder": "temporary/database"
+  },
+  {
+    "path": "temporary/database/01_mvcc/01_vi_sao_can_mvcc.md",
+    "title": "Vì sao database cần MVCC",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/02_hai_mo_hinh_luu_truyen_phien_ban.md",
+    "title": "Hai mô hình lưu trữ phiên bản: PostgreSQL và InnoDB",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/03_isolation_trong_acid.md",
+    "title": "Isolation nằm ở đâu trong ACID",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/04_cac_hien_tuong_tuong_tranh.md",
+    "title": "Các hiện tượng tương tranh",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/05_bon_isolation_levels.md",
+    "title": "Bốn isolation level",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/06_doi_chieu_engine_va_vi_du.md",
+    "title": "Đối chiếu PostgreSQL và InnoDB qua một ví dụ",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/07_tradeoff_va_tong_ket.md",
+    "title": "Trade-off và tổng kết MVCC",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/database/01_mvcc/README.md",
+    "title": "MVCC - Multi-Version Concurrency Control",
+    "category": "temporary",
+    "folder": "temporary/database/01_mvcc"
+  },
+  {
+    "path": "temporary/docker/README.md",
+    "title": "Docker",
+    "category": "temporary",
+    "folder": "temporary/docker"
+  },
+  {
+    "path": "temporary/docker/01_sandbox/01_docker_sbx_boi_canh.md",
+    "title": "Docker SBX: Bối cảnh và lý do ra đời",
+    "category": "temporary",
+    "folder": "temporary/docker/01_sandbox"
+  },
+  {
+    "path": "temporary/docker/01_sandbox/02_docker_sbx_mo_hinh.md",
+    "title": "Docker SBX: Mô hình cô lập và so sánh với Docker thường",
+    "category": "temporary",
+    "folder": "temporary/docker/01_sandbox"
+  },
+  {
+    "path": "temporary/docker/01_sandbox/README.md",
+    "title": "Sandbox - Cô lập môi trường chạy cho AI Coding Agent",
+    "category": "temporary",
+    "folder": "temporary/docker/01_sandbox"
+  },
+  {
+    "path": "interesting/README.md",
+    "title": "Interesting Docs - Tài liệu Thú vị & Mở rộng Góc nhìn",
+    "category": "interesting",
+    "folder": "interesting"
+  },
+  {
+    "path": "interesting/historical_breakthroughs/README.md",
+    "title": "Historical Breakthroughs",
+    "category": "interesting",
+    "folder": "interesting/historical_breakthroughs"
+  },
+  {
+    "path": "interesting/historical_breakthroughs/c10k_problem.md",
+    "title": "Bài toán C10K & Bước ngoặt I/O Multiplexing",
+    "category": "interesting",
+    "folder": "interesting/historical_breakthroughs"
+  }
+];

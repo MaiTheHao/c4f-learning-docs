@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "^/(\\.agents|\\.git|\\.gitignore|LICENSE\\.txt|local|docs|web/req\\.txt|web/generate_manifest\\.py)(/.*)?$",
+      "status": 404
+    },
+    {
+      "src": "^/lib/(.*)$",
+      "dest": "/web/lib/$1"
+    },
+    {
+      "src": "^/(index\\.css|index\\.js|manifest\\.js|manifest\\.json)$",
+      "dest": "/web/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/web/index.html"
+    }
+  ]
+}
