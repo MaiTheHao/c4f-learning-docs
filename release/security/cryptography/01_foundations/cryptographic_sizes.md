@@ -64,9 +64,9 @@ Bảng tra nhanh các con số chuẩn, kèm văn bản định nghĩa:
 | **AES** | `128 bit` | Cỡ khối, cố định cho cả ba cỡ khóa | FIPS 197-upd1 (2023) |
 | **AES** | `10` / `12` / `14` vòng | Số vòng tương ứng ba cỡ khóa | FIPS 197-upd1 (2023) |
 | **AES-GCM** | `96 bit` | Cỡ nonce được khuyến nghị | NIST SP 800-38D (2007) |
-| **AES-GCM** | `128 bit` | Cỡ tag mặc định; tập hợp lệ là `128`, `120`, `112`, `104`, `96` | NIST SP 800-38D (2007) |
+| **AES-GCM** | `128 bit` | Cỡ tag thông dụng nhất; các cỡ hợp lệ khác là `120`, `112`, `104`, `96` | NIST SP 800-38D (2007) |
 | **ChaCha20-Poly1305** | `256` / `96` / `128 bit` | Cỡ khóa, nonce, tag theo thứ tự | RFC 8439 (2018) |
-| **RSA** | `2048` / `3072` / `4096 bit` | Cỡ modulus; chuẩn yêu cầu tối thiểu `2048 bit` và là số chẵn | FIPS 186-5 (2023) |
+| **RSA** | `2048` / `3072` / `4096 bit` | Cỡ modulus; khi sinh khóa, chuẩn yêu cầu tối thiểu `2048 bit` và là số chẵn | FIPS 186-5 (2023) |
 | **ECC** | `256 bit` (P-256), `255 bit` (Curve25519) | Cỡ khóa; Curve25519 mã hóa thành `32 byte` | FIPS 186-5, RFC 7748 |
 | **ECDSA P-256** | `512 bit` | Cỡ chữ ký, gồm hai thành phần `256 bit` | FIPS 186-5, SP 800-186 |
 | **HMAC-SHA256** | `256` / `512` / `≥112 bit` | Cỡ đầu ra, cỡ khối bên trong, cỡ khóa tối thiểu | FIPS 198-1, SP 800-131A |
@@ -100,7 +100,7 @@ Bảng này giải thích trực tiếp câu hỏi mở đầu: `AES-256` tươn
 | Hàm | Đầu ra | Ký tự hex | Chống collision | Chống preimage | Trạng thái |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | MD5 | `128 bit` | `32` | Đã bị phá (va chạm công bố 2004) | `128 bit` trên lý thuyết | Không dùng |
-| SHA-1 | `160 bit` | `40` | `< 80 bit`, thấp hơn mức `80` danh nghĩa | `160 bit` | Đang bị loại bỏ, NIST đặt mốc `2030` |
+| SHA-1 | `160 bit` | `40` | `< 80 bit`, thấp hơn mức `80` danh nghĩa | `160 bit` | NIST chuyển khỏi SHA-1 cho bảo vệ mới trước `2030` |
 | SHA-256 | `256 bit` | `64` | `128 bit` | `256 bit` | Khuyến nghị |
 | SHA-512 | `512 bit` | `128` | `256 bit` | `512 bit` | Khuyến nghị |
 | SHA3-256 | `256 bit` | `64` | `128 bit` | `256 bit` | Khuyến nghị |
