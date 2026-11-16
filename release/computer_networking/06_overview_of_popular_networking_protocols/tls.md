@@ -218,6 +218,7 @@ Bạn có muốn chúng ta tiếp tục tìm hiểu về vai trò của **Certif
 
 *   [Giao thức SSH (Secure Shell)](./ssh.md) — Đối chiếu cơ chế bảo vệ phiên quản trị từ xa, mô hình tín nhiệm TOFU phi tập trung với WebPKI CA của TLS.
 *   [Giao thức HTTPS](./https.md) — Tìm hiểu cách TLS kết hợp cùng giao thức HTTP để bảo vệ ứng dụng web trên môi trường Internet.
+*   [TLS: Bắt tay, Forward Secrecy và Vai trò của Chứng chỉ](../../security/cryptography/04_protocols/tls_handshake.md) — cùng **TLS handshake** nhìn từ phía mật mã: cấu trúc khóa và **forward secrecy**, tức phần lý do đứng sau các bước bắt tay đã mô tả ở trên.
 
 ---
 [← Back to README](../README.md)

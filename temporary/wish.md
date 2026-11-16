@@ -3,7 +3,13 @@
 ## 1. Software Architecture
 
 ### 1.1. Architecture Styles
-
+Chủ đề	Nội dung cần hiểu
+Architectural Drivers	Những yếu tố thúc đẩy lựa chọn kiến trúc
+Quality Attributes	Các thuộc tính chất lượng
+Architectural Constraints	Ràng buộc kỹ thuật, nghiệp vụ
+Trade-off Analysis	Đánh đổi giữa các lựa chọn
+Architectural Decisions	Quyết định kiến trúc và lý do
+Architecture Evaluation	Đánh giá chất lượng kiến trúc
 - Monolithic
 - Modular Monolith
 - Microservices
@@ -119,3 +125,18 @@
 
 - Observability
 - Monitoring
+
+Nghiên cứu thêm security gồm
+HMAC
+
+Nghiên cứu sâu hơn về các tính chất:
+
+Tính bí mật | Confidentiality | Ngăn người không có quyền đọc dữ liệu
+Tính toàn vẹn | Integrity | Phát hiện dữ liệu bị sửa đổi trái phép
+Tính xác thực | Authentication | Xác minh nguồn gốc hoặc danh tính theo cơ chế xác thực
+Tính không thể chối bỏ | Non-repudiation | Cung cấp bằng chứng để người thực hiện khó phủ nhận hành động
+Tính sẵn sàng | Availability | Đảm bảo hệ thống và dữ liệu có thể truy cập khi cần
+Tính mới | Freshness | Phát hiện thông điệp cũ bị phát lại hoặc sử dụng lại
+Tính bí mật chuyển tiếp | Forward Secrecy | Lộ khóa dài hạn không làm lộ các phiên liên lạc trước đó
+Tính ẩn danh | Anonymity | Che giấu danh tính của chủ thể
+Tính không liên kết | Unlinkability | Ngăn liên kết nhiều hoạt động để xác định cùng một chủ thể
