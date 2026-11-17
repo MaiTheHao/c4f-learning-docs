@@ -22,6 +22,7 @@ Kiến trúc sư phân loại đặc tính thành **Operational**, **Structural*
 3. **[03. Explicit, Implicit và Composite](03_explicit_implicit_composite.md)**: Cách đặc tính xuất hiện trong yêu cầu, rủi ro của đặc tính ngầm định và cách phân rã mục tiêu phức hợp như **Agility**.
 4. **[04. Phạm vi Áp dụng và Architectural Quantum](04_scope_and_quantum.md)**: Giới hạn của giả định monolithic, định nghĩa **Architectural Quantum** và hệ quả khi mỗi vùng có bộ đặc tính riêng.
 5. **[05. Trade-off và Quản trị Kiến trúc](05_tradeoffs_and_governance.md)**: **Least Worst Architecture**, các cặp đặc tính xung đột và quản trị bằng **Fitness Functions** trong pipeline CI/CD.
+6. **[06. Fault Tolerance](characteristics/fault_tolerance.md)**: Định nghĩa và phân biệt với **Availability** cùng **Reliability**, cách đặc tính này định hình ranh giới sự cố, mô hình dữ liệu và vòng đời tiến trình, mức hỗ trợ theo từng architecture style và cái giá phải trả về performance.
 
 ---
 

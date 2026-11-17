@@ -64,6 +64,7 @@ Cây quyết định chỉ là heuristic. Ba yếu tố thực tế thường l�
 
 *   [Các Distributed Architecture Styles](03_distributed_styles.md) — cùng trục **so sánh và lựa chọn**: bài trước mô tả từng style phân tán, bài này đặt chúng cạnh nhau để đánh đổi theo bối cảnh.
 *   [Architecture Styles Trong Kiến Trúc Phần Mềm](01_introduction.md) — cùng trục **khung phân loại**: hai trục triển khai và phân chia là nền tảng để đọc bảng đối chiếu này.
+*   [Fault Tolerance](../02_architectural_characteristics/characteristics/fault_tolerance.md) — cùng trục **đánh giá style theo đặc tính**: bảng đối chiếu chấm style theo tiêu chí tổng quát, bài kia mổ xẻ riêng khả năng chịu lỗi và cái giá phải trả.
 
 ---
 [← Back to README](README.md)

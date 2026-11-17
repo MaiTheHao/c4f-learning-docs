@@ -55,6 +55,7 @@ Môi trường đám mây biến thêm ba đặc tính thành bắt buộc:
 
 *   [Giới thiệu Architectural Characteristics](01_introduction.md) — khung phân loại này chỉ có nghĩa sau khi đã xác định **định nghĩa và tiêu chí** của một đặc tính kiến trúc.
 *   [Explicit, Implicit và Composite](03_explicit_implicit_composite.md) — sau khi biết một đặc tính thuộc nhóm nào, câu hỏi tiếp theo là nó xuất hiện **rõ ràng hay ngầm định** trong yêu cầu kinh doanh.
+*   [Fault Tolerance](characteristics/fault_tolerance.md) — cùng trục **phân biệt đặc tính vận hành**: bảng phân loại chỉ ra Fault Tolerance trả lời câu hỏi "có sự cố thì còn sống tiếp không", bài kia triển khai câu trả lời đó thành cơ chế cách ly sự cố cụ thể.
 *   [Architecture Styles Trong Kiến Trúc Phần Mềm](../04_architecture_styles/01_introduction.md) — cùng trục **từ đặc tính đến cấu trúc**: khung phân loại đặc tính là tiêu chí để chọn style, còn style là cách hiện thực hóa chúng.
 
 ---

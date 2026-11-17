@@ -745,6 +745,12 @@ window.DOCS_MANIFEST = [
     "folder": "release/software_architecture/02_architectural_characteristics"
   },
   {
+    "path": "release/software_architecture/02_architectural_characteristics/characteristics/fault_tolerance.md",
+    "title": "Fault Tolerance",
+    "category": "release",
+    "folder": "release/software_architecture/02_architectural_characteristics/characteristics"
+  },
+  {
     "path": "release/software_architecture/03_components/01_introduction.md",
     "title": "Component Trong Kiến Trúc Phần Mềm",
     "category": "release",
